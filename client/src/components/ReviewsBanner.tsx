@@ -2,12 +2,12 @@ import { Star } from "lucide-react";
 
 // todo: remove mock functionality - replace with real Google reviews
 const reviews = [
-  { name: "Michael S.", text: "Hervorragende Beratung", rating: 5 },
-  { name: "Sandra K.", text: "Top Konditionen", rating: 5 },
-  { name: "Thomas M.", text: "Beste Finanzierungsberatung", rating: 5 },
-  { name: "Julia W.", text: "Sehr professionell", rating: 5 },
-  { name: "Andreas H.", text: "Kann ich nur empfehlen", rating: 5 },
-  { name: "Lisa B.", text: "Erstklassiger Service", rating: 5 },
+  { name: "Michael S.", text: "Hervorragende Beratung und top Konditionen!", rating: 5 },
+  { name: "Sandra K.", text: "Schnell, kompetent und immer erreichbar.", rating: 5 },
+  { name: "Thomas M.", text: "Beste Finanzierungsberatung in der Region!", rating: 5 },
+  { name: "Julia W.", text: "Sehr professionell und transparent.", rating: 5 },
+  { name: "Andreas H.", text: "Kann ich nur weiterempfehlen!", rating: 5 },
+  { name: "Lisa B.", text: "Top Service von Anfang bis Ende.", rating: 5 },
 ];
 
 export default function ReviewsBanner() {
@@ -15,32 +15,30 @@ export default function ReviewsBanner() {
 
   return (
     <div
-      className="relative overflow-hidden bg-zinc-950 py-5"
+      className="relative overflow-hidden bg-foreground/5 py-4 border-y border-border/50"
       data-testid="banner-reviews"
     >
       <div className="flex animate-scroll">
         {duplicatedReviews.map((review, index) => (
           <div
             key={index}
-            className="flex items-center gap-8 px-10 whitespace-nowrap"
+            className="flex items-center gap-6 px-8 whitespace-nowrap"
           >
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-0.5">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400"
-                  />
-                ))}
-              </div>
-              <span className="text-sm text-zinc-400">
-                "{review.text}"
-              </span>
-              <span className="text-sm text-zinc-500">
-                — {review.name}
-              </span>
+            <div className="flex items-center gap-1">
+              {[...Array(review.rating)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                />
+              ))}
             </div>
-            <div className="flex items-center gap-1.5 text-zinc-500">
+            <span className="text-sm text-muted-foreground">
+              "{review.text}"
+            </span>
+            <span className="text-sm font-medium text-foreground/70">
+              — {review.name}
+            </span>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <svg className="w-4 h-4" viewBox="0 0 24 24">
                 <path
                   fill="#4285F4"
@@ -59,7 +57,7 @@ export default function ReviewsBanner() {
                   d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                 />
               </svg>
-              <span className="text-xs">Google</span>
+              <span>Google</span>
             </div>
           </div>
         ))}
