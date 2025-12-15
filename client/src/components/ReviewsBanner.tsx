@@ -15,11 +15,11 @@ export default function ReviewsBanner() {
 
   return (
     <div
-      className="relative overflow-hidden bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 py-6"
+      className="relative overflow-hidden bg-muted/30 py-6 border-y border-border/30"
       data-testid="banner-reviews"
     >
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none" />
       
       <div className="flex animate-scroll">
         {duplicatedReviews.map((review, index) => (
@@ -36,7 +36,7 @@ export default function ReviewsBanner() {
               ))}
             </div>
             <div className="flex items-center gap-2">
-              <Quote className="w-3 h-3 text-primary/40 rotate-180" />
+              <Quote className="w-3 h-3 text-muted-foreground/40 rotate-180" />
               <span className="text-sm text-foreground/80">
                 {review.text}
               </span>
