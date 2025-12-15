@@ -1,0 +1,164 @@
+Hier ist der **komplette, saubere Replit-Prompt**.
+Nicht diskutieren, **1:1 einfügen**.
+
+---
+
+## **REPLIT AI – FULL MASTER PROMPT**
+
+Baue eine **hochwertige, voll animierte Onepager-Webseite** für:
+
+**Dirk Heinrich – Baufinanzierung**
+Enger Partner der **Swiss Life Select**
+
+Ziel: **Premium-Auftritt mit maximaler Conversion**, modern-direkt, vertrauensstark.
+
+---
+
+### **Zielgruppe**
+
+Alle: Privatkunden, Selbstständige, Kapitalanleger.
+
+### **Haupt-CTA**
+
+**„Finanzierung prüfen“**
+
+---
+
+## **Design & CI**
+
+* **Primärfarbe:** Weiß
+* **Akzentfarbe:** `#D82033` (sparsam, gezielt für CTAs & Highlights)
+* Clean, modern, Finance-Premium
+* Viel Weißraum, klare Linien
+* Keine Template-Optik
+
+### **Typografie**
+
+* Headlines: elegante Serif (z. B. Playfair Display / Libre Baskerville)
+* Body: moderne Sans-Serif (z. B. Inter / Manrope)
+* Große Headlines, starke Hierarchie
+
+---
+
+## **Animation & Motion**
+
+* **Premium cinematic**
+* Page-Load Animation beim ersten Aufruf
+* Smooth Scroll Animations (Fade, Slide, leichte Parallax)
+* Micro-Interactions bei Buttons & Links
+* Ruhig, flüssig, hochwertig – keine Spielereien
+
+---
+
+## **Hero Section (Above the Fold)**
+
+* Große animierte Headline (Fade + Slide)
+* Subheadline leicht verzögert
+* Hintergrund mit dezenter Motion (Light-Gradient, Soft Blur oder Lines)
+* **Swiss Life Select Partner-Hinweis sichtbar & seriös**
+* Primärer CTA-Button:
+  🔴 **„Finanzierung prüfen“** (Farbe #D82033, Hover-Animation)
+
+**Hero-Claim (sinngemäß, modern-direkt):**
+„Ihre Baufinanzierung. Klar. Sicher. Maßgeschneidert.“
+
+---
+
+## **Above-the-Fold Funnel-Kachel (sehr wichtig)**
+
+Integriere **direkt im Hero-Bereich** eine **schwebende, animierte Funnel-Kachel**.
+
+### **Design**
+
+* Glassmorphism oder Soft-Card-Design
+* Leichter Shadow, abgerundete Ecken
+* Animiertes Einfahren (Slide + Fade von unten)
+* Premium, ruhig, seriös
+
+### **Inhalt der Kachel**
+
+**Titel:**
+**„Finanzierung in 60 Sekunden prüfen“**
+
+**3-Schritte-Übersicht (visuell):**
+
+1. Kaufvorhaben auswählen
+2. Eckdaten eingeben
+3. Persönliche Einschätzung erhalten
+
+* Progress-Indicator (Step 1 von 3)
+* Kein vollständiges Formular, nur Funnel-Start
+
+**CTA in der Kachel:**
+🔴 **„Jetzt Finanzierung prüfen“**
+
+**Trust-Hinweis (klein):**
+✓ kostenlos · ✓ unverbindlich · ✓ Swiss Life Select Partner
+
+### **UX**
+
+* Klick → Scroll oder Modal zum Funnel-Bereich
+* Funnel später erweiterbar (Multi-Step)
+
+---
+
+## **Weitere Sektionen (Onepager)**
+
+1. **Leistungen**
+
+   * Baufinanzierung
+   * Anschlussfinanzierung
+   * Umschuldung
+   * Kapitalanlage
+
+2. **Warum Dirk Heinrich**
+
+   * Persönliche Beratung
+   * Klare Strategien
+   * Starker Partner: Swiss Life Select
+
+3. **Partner-Section**
+
+   * Swiss Life Select Logo
+   * Seriöser Partner-Hinweis
+
+4. **Call to Action**
+
+   * Wieder: **„Finanzierung prüfen“**
+   * Conversion-stark, klar
+
+5. **Footer**
+
+   * Geschäftsadresse:
+     **Aarstraße 162
+     65232 Taunusstein**
+   * **Impressum (Pflichtseite oder Modal)**
+
+---
+
+## **Technische Anforderungen**
+
+* Sauberes, performantes Frontend (HTML/CSS/JS oder React)
+* Animationen mit CSS, GSAP oder Framer Motion
+* Mobile-first, voll responsive
+* Sehr schnelle Ladezeiten
+* Klar strukturierter Code, erweiterbar
+
+---
+
+## **Wichtig**
+
+* Kein Baukasten-Design
+* Keine Textwüsten
+* Fokus auf Vertrauen + Conversion
+* Auftritt wie eine **hochpreisige Finanzberatung**
+
+---
+
+Wenn du danach willst:
+
+* Funnel-Fragen (perfekt für Abschluss)
+* Konkrete Animations-Timings
+* Mobile-Optimierung der Funnel-Kachel
+
+Sag **eins**.
