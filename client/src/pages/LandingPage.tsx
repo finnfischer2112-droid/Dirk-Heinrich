@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ReviewsBanner from "@/components/ReviewsBanner";
 import ServicesSection from "@/components/ServicesSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import PartnerSection from "@/components/PartnerSection";
@@ -12,6 +13,7 @@ export default function LandingPage() {
       <Header />
       <main>
         <HeroSection />
+        <ReviewsBanner />
         <ServicesSection />
         <BenefitsSection />
         <PartnerSection />
