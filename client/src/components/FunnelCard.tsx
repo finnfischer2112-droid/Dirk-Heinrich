@@ -133,10 +133,6 @@ export default function FunnelCard() {
             <Check className="w-3.5 h-3.5 text-primary" />
             <span>unverbindlich</span>
           </div>
-          <div className="flex items-center gap-1">
-            <Check className="w-3.5 h-3.5 text-primary" />
-            <span>Swiss Life Select Partner</span>
-          </div>
         </div>
       </div>
     </Card>

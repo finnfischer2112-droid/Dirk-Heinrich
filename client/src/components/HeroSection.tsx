@@ -33,21 +33,6 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
-            <div
-              className={`transition-all duration-700 delay-200 ${
-                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              <Badge
-                variant="secondary"
-                className="mb-6 px-4 py-1.5 text-xs font-medium"
-                data-testid="badge-partner"
-              >
-                <Shield className="w-3 h-3 mr-1.5" />
-                Swiss Life Select Partner
-              </Badge>
-            </div>
-
             <h1
               className={`font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight mb-6 transition-all duration-700 delay-300 ${
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"

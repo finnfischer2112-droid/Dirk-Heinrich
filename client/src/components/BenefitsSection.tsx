@@ -22,7 +22,7 @@ const benefits = [
     icon: Handshake,
     title: "Starker Partner",
     description:
-      "Als Swiss Life Select Partner Zugang zu exklusiven Konditionen.",
+      "Zugang zu exklusiven Konditionen durch ein breites Partnernetzwerk.",
   },
   {
     id: "quality",

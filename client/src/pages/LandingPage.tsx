@@ -16,7 +16,6 @@ export default function LandingPage() {
         <ReviewsBanner />
         <ServicesSection />
         <BenefitsSection />
-        <PartnerSection />
         <CTASection />
       </main>
       <Footer />

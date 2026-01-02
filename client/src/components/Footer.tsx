@@ -28,14 +28,8 @@ export default function Footer() {
             </div>
             <p className="text-sm text-muted-foreground max-w-md mb-6">
               Ihre persönliche Beratung für maßgeschneiderte Baufinanzierungen. 
-              Als Partner von Swiss Life Select biete ich Ihnen unabhängige 
-              Finanzierungslösungen.
+              Ich biete Ihnen unabhängige Finanzierungslösungen.
             </p>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="px-2 py-1 bg-primary/10 text-primary rounded">
-                Swiss Life Select Partner
-              </span>
-            </div>
           </div>
 
           <div>
@@ -156,9 +150,6 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted-foreground">
               © {currentYear} Dirk Heinrich - Baufinanzierung. Alle Rechte vorbehalten.
-            </p>
-            <p className="text-xs text-muted-foreground">
-              Partner von Swiss Life Select
             </p>
           </div>
         </div>

@@ -57,13 +57,6 @@ export default function Header() {
             >
               Vorteile
             </button>
-            <button
-              onClick={() => scrollToSection("partner")}
-              className="text-sm font-medium text-muted-foreground transition-colors duration-200"
-              data-testid="link-partner"
-            >
-              Partner
-            </button>
             <Button
               onClick={() => scrollToSection("funnel")}
               data-testid="button-header-cta"
@@ -100,13 +93,6 @@ export default function Header() {
               data-testid="mobile-link-benefits"
             >
               Vorteile
-            </button>
-            <button
-              onClick={() => scrollToSection("partner")}
-              className="text-left py-3 px-4 text-sm font-medium text-muted-foreground rounded-md"
-              data-testid="mobile-link-partner"
-            >
-              Partner
             </button>
             <Button
               onClick={() => scrollToSection("funnel")}
