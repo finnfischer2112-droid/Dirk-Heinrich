@@ -4,7 +4,11 @@
 
 A premium single-page marketing website for Dirk Heinrich, a mortgage financing consultant. The application serves as a conversion-focused landing page targeting German-speaking customers seeking mortgage financing services (Baufinanzierung, Anschlussfinanzierung, Umschuldung, and Kapitalanlage).
 
-The primary goal is to drive users toward the main CTA "Finanzierung prüfen", which redirects to an external financing portal.
+The primary goal is to drive users toward the internal contact form at `/kontakt` for lead capture. All CTAs redirect to this internal contact page.
+
+## Email Integration
+
+Contact form submissions are sent via Gmail to `dirk.heinrich@swisslife-select.de` using the Replit Gmail connector integration. The email module is located at `server/email.ts`.
 
 ## User Preferences
 
