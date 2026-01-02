@@ -37,7 +37,7 @@ export default function HeroSection() {
               }`}
             >
               <ShieldCheck className="w-3.5 h-3.5" />
-              Ihr Experte in Taunusstein
+              Ihr Experte im Rhein-Main-Gebiet
             </div>
 
             <h1
