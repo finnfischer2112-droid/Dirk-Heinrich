@@ -2,9 +2,9 @@
 
 ## Overview
 
-A premium single-page marketing website for Dirk Heinrich, a mortgage financing consultant partnered with Swiss Life Select. The application serves as a conversion-focused landing page targeting German-speaking customers seeking mortgage financing services (Baufinanzierung, Anschlussfinanzierung, Umschuldung, and Kapitalanlage).
+A premium single-page marketing website for Dirk Heinrich, a mortgage financing consultant. The application serves as a conversion-focused landing page targeting German-speaking customers seeking mortgage financing services (Baufinanzierung, Anschlussfinanzierung, Umschuldung, and Kapitalanlage).
 
-The primary goal is to drive users toward the main CTA "Finanzierung prüfen" (Check Financing), which redirects to an external Swiss Life Select financing portal.
+The primary goal is to drive users toward the main CTA "Finanzierung prüfen", which redirects to an external financing portal.
 
 ## User Preferences
 
@@ -62,7 +62,7 @@ The application follows strict design guidelines:
 ## External Dependencies
 
 ### Third-Party Services
-- **Swiss Life Select Financing Portal**: External redirect for lead capture (`swisslife-select.finlink.de`)
+- **Financing Portal**: External redirect for lead capture (`finlink.de`)
 - **Google Fonts**: Playfair Display, DM Sans, Inter, Geist Mono
 
 ### Key NPM Dependencies
