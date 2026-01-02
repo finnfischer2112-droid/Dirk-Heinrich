@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Shield, ArrowRight } from "lucide-react";
-import FunnelCard from "./FunnelCard";
+import { ArrowRight } from "lucide-react";
+import dirkHeinrichImg from "@assets/23002-Herr-Heinrich-Dirk-74085_1767387906796.png";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -11,13 +10,6 @@ export default function HeroSection() {
     const timer = setTimeout(() => setIsLoaded(true), 100);
     return () => clearTimeout(timer);
   }, []);
-
-  const scrollToFunnel = () => {
-    const element = document.getElementById("funnel");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section
@@ -83,12 +75,18 @@ export default function HeroSection() {
           </div>
 
           <div
-            className={`transition-all duration-1000 delay-700 ${
+            className={`relative transition-all duration-1000 delay-700 ${
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
-            id="funnel"
           >
-            <FunnelCard />
+            <div className="relative max-w-md mx-auto">
+              <img
+                src={dirkHeinrichImg}
+                alt="Dirk Heinrich"
+                className="relative z-10 w-full h-auto drop-shadow-2xl"
+                data-testid="img-dirk-heinrich"
+              />
+            </div>
           </div>
         </div>
       </div>
