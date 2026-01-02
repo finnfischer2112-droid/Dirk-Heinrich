@@ -46,11 +46,9 @@ export default function HeroSection() {
               }`}
               data-testid="text-hero-headline"
             >
-              Baufinanzierung <br />
-              <span className="relative inline-block">
-                ohne Stress.
-                <div className="absolute bottom-2 left-0 w-full h-3 bg-primary/10 -z-10" />
-              </span>
+              Ihre Baufinanzierung. <br />
+              <span className="text-primary">Klar. Sicher.</span> <br />
+              Maßgeschneidert.
             </h1>
 
             <p
