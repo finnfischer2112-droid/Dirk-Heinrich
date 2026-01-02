@@ -30,10 +30,7 @@ export default function FunnelCard() {
   };
 
   const handleNextStep = () => {
-    if (currentStep < 3) {
-      setCurrentStep(currentStep + 1);
-      console.log("Moving to step:", currentStep + 1);
-    }
+    window.location.href = "https://swisslife-select.finlink.de/lutz-starke/start/finance_type?partner=2a78b047-f5f5-47aa-b7ff-f09906c94fa3&partnerCompany=Swiss%20Life%20Select";
   };
 
   return (
