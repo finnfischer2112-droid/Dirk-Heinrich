@@ -50,11 +50,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>info@dh-baufinanzierung.de</span>
+                <span>dirk.heinrich@swisslife-select.de</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+49 (0) 6128 XXXXXX</span>
+                <span>(06128) 923 9010</span>
               </div>
             </div>
           </div>
@@ -83,24 +83,25 @@ export default function Footer() {
                         Angaben gemäß § 5 TMG
                       </h4>
                       <p>Dirk Heinrich</p>
-                      <p>Baufinanzierung</p>
+                      <p>BWV-Versicherungsfachmann</p>
+                      <p>Zertifizierter Experte für den Öffentlichen Dienst</p>
+                      <p>DIN-Gewerbefachmann</p>
+                      <br />
                       <p>Aarstraße 162</p>
                       <p>65232 Taunusstein</p>
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground mb-2">Kontakt</h4>
-                      <p>Telefon: +49 (0) 6128 XXXXXX</p>
-                      <p>E-Mail: info@dh-baufinanzierung.de</p>
+                      <p>Telefon: (06128) 923 9010</p>
+                      <p>Mobil: 0172 616 5555</p>
+                      <p>E-Mail: dirk.heinrich@swisslife-select.de</p>
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground mb-2">
                         Berufsbezeichnung und berufsrechtliche Regelungen
                       </h4>
                       <p>
-                        Finanzanlagenvermittler gemäß § 34f Abs. 1 GewO
-                      </p>
-                      <p>
-                        Immobiliendarlehensvermittler gemäß § 34i Abs. 1 GewO
+                        Immobiliardarlehensvermittler gemäß § 34i Absatz 1 Satz 1 Gewerbeordnung (GewO)
                       </p>
                     </div>
                     <div>
@@ -110,13 +111,31 @@ export default function Footer() {
                       <p>
                         Industrie- und Handelskammer Wiesbaden
                       </p>
+                      <p>Wilhelmstraße 24–26</p>
+                      <p>65183 Wiesbaden</p>
                     </div>
                     <div>
                       <h4 className="font-medium text-foreground mb-2">
-                        Registereintrag
+                        Vermittlerregister
                       </h4>
                       <p>
-                        Eintragung im Vermittlerregister nach § 11a GewO
+                        Industrie- und Handelskammer Wiesbaden
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-foreground mb-2">
+                        Registrierungsnummer
+                      </h4>
+                      <p>
+                        D-W-1 79-6V5S-62
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-foreground mb-2">
+                        Steuer-ID
+                      </h4>
+                      <p>
+                        DE 04 826 00947
                       </p>
                     </div>
                     <div>
