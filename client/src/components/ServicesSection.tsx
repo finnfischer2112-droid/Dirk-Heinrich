@@ -1,35 +1,43 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Home, Repeat, Building2, PiggyBank } from "lucide-react";
+import { Home, Repeat, Building2, PiggyBank, Paintbrush, Coins, Construction } from "lucide-react";
 
 const services = [
   {
-    id: "baufinanzierung",
+    id: "neubau",
+    icon: Construction,
+    title: "Kauf Neubau",
+    description: "Finanzierung für Ihr neues Bauprojekt oder den Erstbezug.",
+  },
+  {
+    id: "bestand",
     icon: Home,
-    title: "Baufinanzierung",
-    description:
-      "Maßgeschneiderte Finanzierungslösungen für den Kauf oder Bau Ihrer Traumimmobilie.",
+    title: "Kauf Bestandsimmobilie",
+    description: "Sichere Finanzierung beim Erwerb einer bestehenden Immobilie.",
+  },
+  {
+    id: "eigenes-bauvorhaben",
+    icon: Building2,
+    title: "Eigenes Bauvorhaben",
+    description: "Individuelle Begleitung für Ihr privates Hausbauprojekt.",
+  },
+  {
+    id: "modernisierung",
+    icon: Paintbrush,
+    title: "Modernisierung",
+    description: "Kapital für Renovierung, Sanierung oder energetische Optimierung.",
   },
   {
     id: "anschluss",
     icon: Repeat,
     title: "Anschlussfinanzierung",
-    description:
-      "Optimale Konditionen für die Verlängerung Ihrer bestehenden Baufinanzierung.",
+    description: "Optimale Konditionen für die Verlängerung Ihrer bestehenden Baufinanzierung.",
   },
   {
-    id: "umschuldung",
-    icon: Building2,
-    title: "Umschuldung",
-    description:
-      "Profitieren Sie von besseren Zinsen durch einen strategischen Bankwechsel.",
-  },
-  {
-    id: "kapitalanlage",
-    icon: PiggyBank,
-    title: "Kapitalanlage",
-    description:
-      "Intelligente Finanzierung für renditestarke Immobilieninvestments.",
+    id: "kapitalbeschaffung",
+    icon: Coins,
+    title: "Kapitalbeschaffung",
+    description: "Nutzen Sie Ihre Immobilie als Sicherheit für neues Kapital.",
   },
 ];
 
@@ -78,7 +86,7 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Card
               key={service.id}
