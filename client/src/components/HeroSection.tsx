@@ -67,7 +67,6 @@ export default function HeroSection() {
             }`}>
               {[
                 "Über 400 Banken im Vergleich",
-                "Bestzins-Garantie",
                 "Persönliche Beratung"
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm font-medium text-foreground/80">
