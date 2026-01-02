@@ -89,8 +89,8 @@ export async function sendContactNotification(contact: InsertContact): Promise<b
   try {
     const gmail = await getUncachableGmailClient();
     
-    const profile = await gmail.users.getProfile({ userId: 'me' });
-    const senderEmail = profile.data.emailAddress || '';
+    // Get sender email from connection settings (avoids needing profile read permission)
+    const senderEmail = connectionSettings?.settings?.email || 'noreply@baufinanzierung-heinrich.de';
     
     const recipientEmail = 'dirk.heinrich@swisslife-select.de';
     const subject = `Neue Finanzierungsanfrage: ${contact.firstName} ${contact.lastName}`;
