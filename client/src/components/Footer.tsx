@@ -148,12 +148,6 @@ export default function Footer() {
                   </div>
                 </DialogContent>
               </Dialog>
-              <button
-                className="block text-sm text-muted-foreground transition-colors"
-                data-testid="button-privacy"
-              >
-                Datenschutz
-              </button>
             </div>
           </div>
         </div>
