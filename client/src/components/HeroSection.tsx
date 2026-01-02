@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Star, TrendingUp, ShieldCheck } from "lucide-react";
+import { useLocation } from "wouter";
 import dirkHeinrichImg from "@assets/23002-Herr-Heinrich-Dirk-74085_1767387906796.png";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
@@ -83,7 +85,7 @@ export default function HeroSection() {
             >
               <Button
                 size="lg"
-                onClick={() => window.location.href = "https://swisslife-select.finlink.de/lutz-starke/start/finance_type?partner=2a78b047-f5f5-47aa-b7ff-f09906c94fa3&partnerCompany=Swiss%20Life%20Select"}
+                onClick={() => setLocation("/kontakt")}
                 className="text-base px-10 h-14 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all active-elevate-2"
                 data-testid="button-hero-cta"
               >

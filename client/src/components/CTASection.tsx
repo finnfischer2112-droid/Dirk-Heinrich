@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function CTASection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,13 +24,6 @@ export default function CTASection() {
 
     return () => observer.disconnect();
   }, []);
-
-  const scrollToFunnel = () => {
-    const element = document.getElementById("funnel");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section
@@ -62,7 +57,7 @@ export default function CTASection() {
             <Button
               size="lg"
               variant="secondary"
-              onClick={scrollToFunnel}
+              onClick={() => setLocation("/kontakt")}
               className="text-base px-8 bg-white text-primary"
               data-testid="button-cta-primary"
             >
@@ -72,11 +67,12 @@ export default function CTASection() {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => setLocation("/kontakt")}
               className="text-base border-white/30 text-white bg-white/10"
               data-testid="button-cta-contact"
             >
               <Phone className="w-4 h-4 mr-2" />
-              Rückruf anfordern
+              Kontakt aufnehmen
             </Button>
           </div>
         </div>

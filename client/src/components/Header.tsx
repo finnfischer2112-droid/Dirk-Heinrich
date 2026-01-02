@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +17,19 @@ export default function Header() {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+    if (window.location.pathname !== "/") {
+      setLocation("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -58,7 +68,7 @@ export default function Header() {
               Vorteile
             </button>
             <Button
-              onClick={() => scrollToSection("funnel")}
+              onClick={() => setLocation("/kontakt")}
               data-testid="button-header-cta"
             >
               Finanzierung prüfen
@@ -95,7 +105,7 @@ export default function Header() {
               Vorteile
             </button>
             <Button
-              onClick={() => scrollToSection("funnel")}
+              onClick={() => setLocation("/kontakt")}
               className="mt-2"
               data-testid="mobile-button-cta"
             >
