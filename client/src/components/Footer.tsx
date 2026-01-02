@@ -79,9 +79,6 @@ export default function Footer() {
                   </DialogHeader>
                   <div className="space-y-6 text-sm text-muted-foreground">
                     <div>
-                      <h4 className="font-medium text-foreground mb-2">
-                        Angaben gemäß § 5 TMG
-                      </h4>
                       <p>Dirk Heinrich</p>
                       <p>BWV-Versicherungsfachmann</p>
                       <p>Zertifizierter Experte für den Öffentlichen Dienst</p>
