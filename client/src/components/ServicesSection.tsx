@@ -86,11 +86,11 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {services.map((service, index) => (
             <Card
               key={service.id}
-              className={`group p-6 lg:p-8 transition-all duration-700 hover-elevate ${
+              className={`group p-4 sm:p-6 lg:p-8 transition-all duration-700 hover-elevate ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -98,13 +98,13 @@ export default function ServicesSection() {
               style={{ transitionDelay: `${200 + index * 100}ms` }}
               data-testid={`card-service-${service.id}`}
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 transition-colors group-hover:bg-primary/15">
-                <service.icon className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 sm:mb-5 transition-colors group-hover:bg-primary/15">
+                <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </div>
-              <h3 className="font-serif text-xl font-medium mb-3">
+              <h3 className="font-serif text-base sm:text-xl font-medium mb-2 sm:mb-3">
                 {service.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
             </Card>

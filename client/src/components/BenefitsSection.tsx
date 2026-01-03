@@ -92,11 +92,11 @@ export default function BenefitsSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {benefits.map((benefit, index) => (
             <Card
               key={benefit.id}
-              className={`group p-6 lg:p-8 transition-all duration-700 hover-elevate ${
+              className={`group p-4 sm:p-6 lg:p-8 transition-all duration-700 hover-elevate ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -104,15 +104,15 @@ export default function BenefitsSection() {
               style={{ transitionDelay: `${200 + index * 100}ms` }}
               data-testid={`card-benefit-${benefit.id}`}
             >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center transition-colors group-hover:bg-primary/15">
-                  <benefit.icon className="w-6 h-6 text-primary" />
+              <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+                <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center transition-colors group-hover:bg-primary/15">
+                  <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-lg font-medium mb-2">
+                  <h3 className="font-serif text-base sm:text-lg font-medium mb-1 sm:mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
