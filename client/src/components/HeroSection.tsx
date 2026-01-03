@@ -32,7 +32,7 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Content Column */}
-          <div className="lg:col-span-7 text-center lg:text-left order-2 lg:order-1">
+          <div className="lg:col-span-7 text-center lg:text-left order-1">
             <div
               className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6 transition-all duration-700 delay-100 ${
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -106,11 +106,11 @@ export default function HeroSection() {
 
           {/* Right Visual Column */}
           <div
-            className={`lg:col-span-5 relative order-1 lg:order-2 transition-all duration-1000 delay-700 ${
+            className={`lg:col-span-5 relative order-2 transition-all duration-1000 delay-700 ${
               isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >
-            <div className="relative max-w-[450px] mx-auto lg:ml-auto">
+            <div className="relative max-w-[280px] sm:max-w-[320px] lg:max-w-[450px] mx-auto lg:ml-auto">
               {/* Decorative floating cards */}
               <div className="absolute -top-6 -left-12 z-20 bg-white p-4 rounded-xl shadow-xl animate-bounce-slow hidden xl:block">
                 <div className="flex items-center gap-3">
