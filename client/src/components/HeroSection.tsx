@@ -85,7 +85,7 @@ export default function HeroSection() {
             >
               <Button
                 size="lg"
-                onClick={() => setLocation("/kontakt")}
+                onClick={() => window.open("https://swisslife-select.finlink.de/lutz-starke/start/finance_type?partner=2a78b047-f5f5-47aa-b7ff-f09906c94fa3&partnerCompany=Swiss%20Life%20Select", "_blank")}
                 className="text-base px-10 h-14 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all active-elevate-2"
                 data-testid="button-hero-cta"
               >

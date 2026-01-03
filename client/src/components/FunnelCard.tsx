@@ -117,7 +117,7 @@ export default function FunnelCard() {
         <Button
           className="w-full text-base py-6"
           disabled={!selectedType}
-          onClick={handleNextStep}
+          onClick={() => window.open("https://swisslife-select.finlink.de/lutz-starke/start/finance_type?partner=2a78b047-f5f5-47aa-b7ff-f09906c94fa3&partnerCompany=Swiss%20Life%20Select", "_blank")}
           data-testid="button-funnel-next"
         >
           Jetzt Finanzierung prüfen

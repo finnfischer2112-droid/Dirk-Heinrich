@@ -68,7 +68,7 @@ export default function Header() {
               Vorteile
             </button>
             <Button
-              onClick={() => setLocation("/kontakt")}
+              onClick={() => window.open("https://swisslife-select.finlink.de/lutz-starke/start/finance_type?partner=2a78b047-f5f5-47aa-b7ff-f09906c94fa3&partnerCompany=Swiss%20Life%20Select", "_blank")}
               data-testid="button-header-cta"
             >
               Finanzierung prüfen
@@ -105,7 +105,7 @@ export default function Header() {
               Vorteile
             </button>
             <Button
-              onClick={() => setLocation("/kontakt")}
+              onClick={() => window.open("https://swisslife-select.finlink.de/lutz-starke/start/finance_type?partner=2a78b047-f5f5-47aa-b7ff-f09906c94fa3&partnerCompany=Swiss%20Life%20Select", "_blank")}
               className="mt-2"
               data-testid="mobile-button-cta"
             >
