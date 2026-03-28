@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
-import { useLocation } from "wouter";
+import { ArrowRight } from "lucide-react";
 
 export default function CTASection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -63,16 +61,6 @@ export default function CTASection() {
             >
               Finanzierung prüfen
               <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => setLocation("/kontakt")}
-              className="text-base border-white/30 text-white bg-white/10"
-              data-testid="button-cta-contact"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Kontakt aufnehmen
             </Button>
           </div>
         </div>
