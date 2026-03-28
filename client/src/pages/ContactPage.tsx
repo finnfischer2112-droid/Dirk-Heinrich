@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { insertContactSchema, type InsertContact } from "@shared/schema";
-import { apiRequest, queryClient } from "@/lib/queryClient";
+import { z } from "zod";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import {
   Form,
@@ -19,12 +18,26 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLocation } from "wouter";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 
+const contactSchema = z.object({
+  firstName: z.string().min(1, "Vorname ist erforderlich"),
+  lastName: z.string().min(1, "Nachname ist erforderlich"),
+  email: z.string().email("Bitte gültige E-Mail-Adresse eingeben"),
+  phone: z.string().min(1, "Telefonnummer ist erforderlich"),
+  project: z.string().optional(),
+});
+
+type ContactForm = z.infer<typeof contactSchema>;
+
+const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
+
 export default function ContactPage() {
   const { toast } = useToast();
   const [, setLocation] = useLocation();
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<InsertContact>({
-    resolver: zodResolver(insertContactSchema),
+  const form = useForm<ContactForm>({
+    resolver: zodResolver(contactSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -34,32 +47,37 @@ export default function ContactPage() {
     },
   });
 
-  const mutation = useMutation({
-    mutationFn: async (data: InsertContact) => {
-      await apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Anfrage gesendet",
-        description: "Vielen Dank! Wir werden uns in Kürze bei Ihnen melden.",
+  const onSubmit = async (data: ContactForm) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          Vorname: data.firstName,
+          Nachname: data.lastName,
+          Email: data.email,
+          Telefon: data.phone,
+          Vorhaben: data.project || "",
+        }),
       });
-      form.reset();
-      // Optional: redirect home or show success state
-    },
-    onError: (error) => {
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        throw new Error("Formspree error");
+      }
+    } catch {
       toast({
         title: "Fehler",
         description: "Senden fehlgeschlagen. Bitte versuchen Sie es später erneut.",
         variant: "destructive",
       });
-    },
-  });
-
-  const onSubmit = (data: InsertContact) => {
-    mutation.mutate(data);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  if (mutation.isSuccess) {
+  if (submitted) {
     return (
       <div className="min-h-screen flex items-center justify-center p-6 bg-muted/30">
         <Card className="max-w-md w-full text-center p-8">
@@ -108,7 +126,7 @@ export default function ContactPage() {
                       <FormItem>
                         <FormLabel>Vorname</FormLabel>
                         <FormControl>
-                          <Input placeholder="Max" {...field} />
+                          <Input placeholder="Max" {...field} data-testid="input-firstName" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -121,7 +139,7 @@ export default function ContactPage() {
                       <FormItem>
                         <FormLabel>Nachname</FormLabel>
                         <FormControl>
-                          <Input placeholder="Mustermann" {...field} />
+                          <Input placeholder="Mustermann" {...field} data-testid="input-lastName" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -136,7 +154,7 @@ export default function ContactPage() {
                     <FormItem>
                       <FormLabel>E-Mail</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="max@beispiel.de" {...field} />
+                        <Input type="email" placeholder="max@beispiel.de" {...field} data-testid="input-email" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -150,7 +168,7 @@ export default function ContactPage() {
                     <FormItem>
                       <FormLabel>Telefonnummer</FormLabel>
                       <FormControl>
-                        <Input placeholder="0123 456789" {...field} />
+                        <Input placeholder="0123 456789" {...field} data-testid="input-phone" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -169,6 +187,7 @@ export default function ContactPage() {
                           className="min-h-[120px] resize-none"
                           {...field}
                           value={field.value ?? ""}
+                          data-testid="textarea-project"
                         />
                       </FormControl>
                       <FormMessage />
@@ -179,9 +198,10 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   className="w-full h-12 text-base font-medium"
-                  disabled={mutation.isPending}
+                  disabled={isSubmitting}
+                  data-testid="button-submit"
                 >
-                  {mutation.isPending ? "Wird gesendet..." : "Anfrage senden"}
+                  {isSubmitting ? "Wird gesendet..." : "Anfrage senden"}
                 </Button>
               </form>
             </Form>
