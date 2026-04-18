@@ -1,0 +1,107 @@
+Du bist ein Senior SEO-Entwickler. Erstelle jetzt den Baufinanzierungsrechner und schließe die interne Verlinkung ab.
+
+TECH-STACK: Vite + React SPA. Routing über client/src/App.tsx.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 1 — Baufinanzierungsrechner-Seite
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Erstelle client/src/pages/RechnerPage.tsx und füge die Route /baufinanzierungsrechner/ in App.tsx hinzu.
+
+TITLE TAG: "Baufinanzierungsrechner | Monatliche Rate berechnen – Dirk Heinrich"
+META DESCRIPTION: "Berechnen Sie kostenlos Ihre monatliche Baufinanzierungsrate ✓ Zinsen & Tilgung anpassen ✓ Sofort online – unverbindlich"
+CANONICAL: "https://heinrich-finanziert.com/baufinanzierungsrechner/"
+
+H1: "Baufinanzierungsrechner – Ihre monatliche Rate sofort berechnen"
+
+RECHNER-FUNKTIONALITÄT (React useState, live Berechnung):
+
+Eingabefelder (jeweils Slider + Zahleneingabe synchronisiert):
+- Darlehensbetrag: 50.000 € bis 800.000 €, Schritt 5.000, Standard 350.000
+- Sollzinssatz: 1,0% bis 6,0%, Schritt 0,1%, Standard 3,8%
+- Tilgungssatz: 1,0% bis 5,0%, Schritt 0,1%, Standard 2,0%
+- Zinsbindung: Dropdown mit Optionen 5 / 10 / 15 / 20 / 25 Jahre, Standard 15
+
+Ausgabe (live, bei jeder Änderung sofort aktualisiert):
+- Monatliche Rate in €
+- Gesamtzinskosten über Zinsbindungszeitraum
+- Restschuld nach Ablauf der Zinsbindung
+
+Berechnungsformeln:
+Monatszins = Sollzinssatz / 100 / 12
+Monatliche Rate = Darlehensbetrag × (Monatszins / (1 - (1 + Monatszins)^(-Zinsbindung×12)))
+Gesamtzinskosten = (Rate × Zinsbindung × 12) - (Darlehensbetrag - Restschuld)
+Restschuld = Darlehensbetrag × (1 + Monatszins)^(Zinsbindung×12) - Rate × ((1 + Monatszins)^(Zinsbindung×12) - 1) / Monatszins
+
+Alle Ausgaben mit toLocaleString('de-DE') formatieren (1.234,56 €)
+
+DESIGN: Gleicher Header und Footer wie alle anderen Seiten. Kein zusätzliches externes CSS-Framework.
+
+TEXT UNTERHALB DES RECHNERS:
+H2: "Was sagt mir mein Ergebnis?"
+Kurzer erklärender Text (3–4 Sätze): Rate erklärt, Restschuld erklärt, Hinweis dass echte Konditionen je nach Bank variieren.
+
+CTA-Block: "Ihr persönliches Angebot – kostenlos & unverbindlich"
+Button: "Jetzt Beratung vereinbaren" → Link zu /#kontakt (oder entsprechendem Anker auf der Homepage)
+Text: "Der Rechner zeigt Ihnen eine erste Orientierung. Dirk Heinrich vergleicht für Sie über 400 Banken und findet das Angebot mit den besten Konditionen für Ihre persönliche Situation."
+
+JSON-LD SCHEMAS für diese Seite:
+
+SCHEMA 1 — FAQPage:
+
+
+SCHEMA 2 — BreadcrumbList:
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 2 — Interne Verlinkung
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Öffne client/src/components/Footer.tsx.
+Füge im Footer einen Abschnitt "Regionen" hinzu mit Links zu allen Stadtseiten:
+
+Überschrift: "Baufinanzierung in Ihrer Region"
+Links (React Router  verwenden):
+- Baufinanzierung Wiesbaden → /baufinanzierung-wiesbaden/
+- Baufinanzierung Idstein → /baufinanzierung-idstein/
+- Baufinanzierung Bad Schwalbach → /baufinanzierung-bad-schwalbach/
+- Baufinanzierung Rheingau → /baufinanzierung-rheingau/
+- Baufinanzierung Mainz → /baufinanzierung-mainz/
+- Baufinanzierungsrechner → /baufinanzierungsrechner/
+
+Styling: Gleicher Stil wie bestehende Footer-Links. Keine neuen Farben oder Schriften einführen.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 3 — Breadcrumbs auf allen Stadtseiten
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Füge in der CityLandingPage.tsx-Komponente (aus Prompt 2) oben eine Breadcrumb-Navigation ein:
+Startseite > Baufinanzierung [Stadt]
+
+Visuell: Einfacher Text-Link "Startseite" → Pfeil → Stadtname
+Und das BreadcrumbList JSON-LD Schema pro Seite mit den korrekten URLs.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 4 — Abschluss-Checkliste
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Führe nach Abschluss aller Aufgaben eine komplette Prüfung durch und zeige mir das Ergebnis:
+
+☐ client/index.html: Title Tag optimiert (mit Taunusstein + Wiesbaden)
+☐ client/index.html: Meta Description mit USPs
+☐ client/index.html: Canonical Tag gesetzt
+☐ client/index.html: robots, og:url, og:locale, Twitter Cards vorhanden
+☐ client/index.html: LocalBusiness JSON-LD mit Kontaktdaten
+☐ client/index.html: FAQPage JSON-LD
+☐ client/public/robots.txt: Korrekt angelegt
+☐ client/public/sitemap.xml: Alle 7 URLs eingetragen
+☐ Google Fonts: Nur Playfair Display + DM Sans
+☐ HeroSection.tsx: H1 enthält "Rhein-Main-Gebiet"
+☐ App.tsx: Alle 6 Routen vorhanden (5 Städte + Rechner)
+☐ render.yaml: SPA-Rewrite konfiguriert
+☐ 5 Stadtseiten: Alle angelegt mit individuellem lokalem Content
+☐ RechnerPage.tsx: Funktionierender Rechner mit korrekter Formel
+☐ Footer.tsx: Regionen-Links eingebaut
+☐ Alle Stadtseiten: Breadcrumb vorhanden
+
+Zeige die Checkliste mit ✅ / ❌ für jeden Punkt. Liste danach alle erstellten/veränderten Dateien auf.

@@ -1,0 +1,146 @@
+Du bist ein Senior SEO-Entwickler und Texter. Erstelle jetzt 5 lokale SEO-Landingpages als neue React-Routen für heinrich-finanziert.com.
+
+TECH-STACK: Vite + React SPA. Routing läuft über client/src/App.tsx.
+WICHTIG: Die Seite ist eine Static Site auf Render. Damit die Routen funktionieren, muss nach dem Hinzufügen der Routen geprüft werden ob in render.yaml oder vite.config.ts ein Rewrite/Fallback für SPA-Routing konfiguriert ist. Falls nicht, ergänzen.
+
+INHABER: Dirk Heinrich, unabhängiger Baufinanzierungsberater
+KONTAKTDATEN: Aus Footer.tsx übernehmen (Telefon, E-Mail, Adresse)
+USP: Unabhängig (kein Bankberater), über 400 Banken verglichen, kostenlose Erstberatung, §34i GewO zugelassen
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SCHRITT 1 — Routing in App.tsx erweitern
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Füge in App.tsx folgende Routen hinzu:
+/baufinanzierung-wiesbaden     → 
+/baufinanzierung-idstein       → 
+/baufinanzierung-bad-schwalbach → 
+/baufinanzierung-rheingau      → 
+/baufinanzierung-mainz         → 
+
+Importiere die Komponenten aus client/src/pages/.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SCHRITT 2 — Gemeinsame Landingpage-Komponente
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Erstelle client/src/components/CityLandingPage.tsx als wiederverwendbare Basis-Komponente mit folgenden Props:
+- city: string (Stadtname)
+- titleTag: string
+- metaDescription: string
+- canonicalUrl: string
+- h1: string
+- localParagraph: string (einzigartiger Text pro Stadt)
+- marktInfo: string (Immobilienmarkt-Info pro Stadt)
+- faqItems: Array<{question: string, answer: string}>
+- areaServed: string[]
+
+Die Komponente rendert:
+1.  oder -Manipulation für Title, Meta Description, Canonical, JSON-LD (nutze react-helmet-async falls bereits installiert, sonst installiere es: npm install react-helmet-async)
+2. Gleiches visuelles Layout wie LandingPage.tsx (Header, Footer identisch übernehmen)
+3. Seiteninhalt-Struktur (siehe unten)
+
+SEITENINHALT-STRUKTUR (für alle 5 Städte):
+- H1: [aus Props]
+- H2: "Warum unabhängige Beratung in [Stadt]?" + 2 Absätze (Vorteil vs. Bankberater)
+- H2: "Der Immobilienmarkt in [Stadt]" + [marktInfo aus Props]
+- H2: "Ihre Baufinanzierung in [Stadt] – So läuft es ab"
+  3 Schritte: 1. Kostenloses Erstgespräch → 2. Bankenvergleich über 400 Anbieter → 3. Optimales Angebot & Abschluss
+- H2: "Häufige Fragen zur Baufinanzierung in [Stadt]" + FAQ-Liste aus Props
+- CTA-Block: "Jetzt kostenlose Beratung vereinbaren" mit Link zur Kontaktsektion der Homepage (#kontakt oder entsprechender Anker)
+- Hinweis: "Zulassung nach §34i GewO · Unabhängig · Kostenlose Erstberatung"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SCHRITT 3 — Die 5 Stadtseiten erstellen
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Erstelle client/src/pages/WiesbadenPage.tsx:
+titleTag: "Baufinanzierung Wiesbaden | Dirk Heinrich – Unabhängige Beratung"
+metaDescription: "Unabhängige Baufinanzierung in Wiesbaden ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung ▶ Jetzt Termin sichern"
+canonicalUrl: "https://heinrich-finanziert.com/baufinanzierung-wiesbaden/"
+h1: "Baufinanzierung Wiesbaden – Ihr unabhängiger Experte im Rhein-Main-Gebiet"
+localParagraph: "Als Wiesbadener wissen Sie: Die Landeshauptstadt Hessens zählt zu den begehrtesten Wohnlagen in Deutschland. Umso wichtiger ist eine Baufinanzierung, die zu Ihren individuellen Möglichkeiten passt – und nicht zum Standardprodukt einer Hausbank."
+marktInfo: "Wiesbaden verzeichnet als Landeshauptstadt Hessens eine konstant hohe Immobiliennachfrage. Quadratmeterpreise für Eigentumswohnungen bewegen sich im Schnitt zwischen 4.500 und 6.500 €/m², für Einfamilienhäuser in guten Lagen deutlich darüber. Gerade in diesem Preisniveau macht ein umfassender Bankenvergleich erhebliche Unterschiede – oft mehrere Tausend Euro über die Laufzeit."
+areaServed: ["Wiesbaden", "Taunusstein", "Mainz-Kastel"]
+faqItems:
+  - F: "Lohnt sich eine Beratung bei Dirk Heinrich auch wenn ich in Wiesbaden wohne und nicht in Taunusstein?" A: "Ja, absolut. Das Einzugsgebiet umfasst das gesamte Rhein-Main-Gebiet. Beratungen finden persönlich vor Ort oder bequem per Video statt."
+  - F: "Wie teuer sind Immobilien in Wiesbaden aktuell?" A: "Wiesbaden gehört zu den teureren Wohnlagen in Hessen. Eigentumswohnungen kosten im Schnitt 4.500–6.500 €/m². Ein umfassender Bankenvergleich ist hier besonders wertvoll."
+  - F: "Welche Förderungen gibt es beim Hauskauf in Wiesbaden?" A: "Neben KfW-Programmen gibt es in Hessen das Wohnraumförderungsprogramm (WFP). Welche Förderung für Sie passt, klären wir im kostenlosen Erstgespräch."
+
+---
+
+Erstelle client/src/pages/IdsteinPage.tsx:
+titleTag: "Baufinanzierung Idstein | Dirk Heinrich – Unabhängige Beratung"
+metaDescription: "Unabhängige Baufinanzierung in Idstein ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung ▶ Jetzt Termin sichern"
+canonicalUrl: "https://heinrich-finanziert.com/baufinanzierung-idstein/"
+h1: "Baufinanzierung Idstein – Unabhängige Beratung direkt vor Ort"
+localParagraph: "Idstein mit seiner historischen Altstadt und der guten Anbindung an die A3 und den Rheingau-Taunus-Kreis ist ein sehr gefragter Wohnort. Wer hier kaufen oder bauen möchte, braucht eine Finanzierung die zum Taunuspreissegment passt – nicht das erstbeste Bankangebot."
+marktInfo: "Idstein profitiert von seiner Lage zwischen Wiesbaden und Frankfurt. Einfamilienhäuser werden hier zwischen 450.000 und 750.000 € gehandelt. Die Nähe zu Taunusstein macht Dirk Heinrich zum idealen Ansprechpartner – kurze Wege, persönliche Beratung."
+areaServed: ["Idstein", "Taunusstein", "Hünstetten"]
+faqItems:
+  - F: "Wie weit ist Dirk Heinrichs Büro von Idstein entfernt?" A: "Der Standort in Taunusstein ist nur wenige Kilometer von Idstein entfernt. Beratungen sind persönlich vor Ort oder per Video möglich."
+  - F: "Gibt es in Idstein besondere Förderungen beim Hauskauf?" A: "In Hessen gibt es das Wohnraumförderungsprogramm (WFP) sowie KfW-Bundesförderungen. Im Erstgespräch prüfen wir gemeinsam alle Möglichkeiten."
+
+---
+
+Erstelle client/src/pages/BadSchwalbachPage.tsx:
+titleTag: "Baufinanzierung Bad Schwalbach | Dirk Heinrich – Unabhängige Beratung"
+metaDescription: "Unabhängige Baufinanzierung in Bad Schwalbach ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung ▶ Jetzt Termin sichern"
+canonicalUrl: "https://heinrich-finanziert.com/baufinanzierung-bad-schwalbach/"
+h1: "Baufinanzierung Bad Schwalbach – Ihr unabhängiger Berater im Rheingau-Taunus-Kreis"
+localParagraph: "Bad Schwalbach als Kreisstadt des Rheingau-Taunus-Kreises bietet ruhiges Wohnen mit guter Erreichbarkeit nach Wiesbaden. Wer hier baut oder kauft, schätzt die Natur – und sollte bei der Finanzierung genauso sorgfältig vorgehen."
+marktInfo: "Im Rheingau-Taunus-Kreis liegen die Immobilienpreise moderat unter dem Wiesbadener Niveau, was Kaufen und Bauen attraktiv macht. Gerade für Familien ist Bad Schwalbach eine sehr begehrte Alternative zur teuren Landeshauptstadt."
+areaServed: ["Bad Schwalbach", "Taunusstein", "Rheingau-Taunus-Kreis"]
+faqItems:
+  - F: "Berät Dirk Heinrich auch Kunden aus dem Rheingau-Taunus-Kreis?" A: "Ja, das gesamte Einzugsgebiet umfasst den Rheingau-Taunus-Kreis inklusive Bad Schwalbach, Taunusstein, Aarbergen und Umgebung."
+  - F: "Ist Bauen im Rheingau-Taunus günstiger als in Wiesbaden?" A: "In der Regel ja. Grundstückspreise und Kaufpreise liegen im Kreisgebiet oft 20–30% unter dem Wiesbadener Niveau – bei ähnlicher Lebensqualität."
+
+---
+
+Erstelle client/src/pages/RheingauPage.tsx:
+titleTag: "Baufinanzierung Rheingau | Dirk Heinrich – Unabhängige Beratung"
+metaDescription: "Unabhängige Baufinanzierung im Rheingau ✓ Eltville, Rüdesheim, Geisenheim ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung"
+canonicalUrl: "https://heinrich-finanziert.com/baufinanzierung-rheingau/"
+h1: "Baufinanzierung Rheingau – Unabhängige Beratung für Eltville, Rüdesheim & Umgebung"
+localParagraph: "Der Rheingau gehört zu den beliebtesten Wohnregionen Hessens – Weinberge, Rheinblick und trotzdem nah an Wiesbaden und Frankfurt. Diese Lagequalität hat ihren Preis. Umso wichtiger ist eine Finanzierung, die über 400 Anbieter vergleicht und das Optimum für Sie herausholt."
+marktInfo: "Eltville, Oestrich-Winkel, Rüdesheim und Geisenheim verzeichnen steigende Nachfrage besonders aus dem Rhein-Main-Ballungsraum. Einfamilienhäuser in Rheinlage erreichen Preise von 600.000 € aufwärts. Eine professionelle Finanzierungsberatung ist hier kein Luxus, sondern notwendig."
+areaServed: ["Eltville am Rhein", "Rüdesheim am Rhein", "Geisenheim", "Oestrich-Winkel", "Rheingau"]
+faqItems:
+  - F: "Berät Dirk Heinrich auch im Rheingau persönlich?" A: "Ja, persönliche Beratungen sind im gesamten Rheingau möglich, alternativ per Video-Beratung von zu Hause."
+  - F: "Sind Immobilien im Rheingau eine gute Kapitalanlage?" A: "Der Rheingau ist bekannt für seine Wertstabilität. Als unabhängiger Berater prüfen wir sowohl Eigennutzung als auch Kapitalanlage-Finanzierungen."
+
+---
+
+Erstelle client/src/pages/MainzPage.tsx:
+titleTag: "Baufinanzierung Mainz | Dirk Heinrich – Unabhängige Beratung"
+metaDescription: "Unabhängige Baufinanzierung in Mainz ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung ▶ Jetzt Termin sichern"
+canonicalUrl: "https://heinrich-finanziert.com/baufinanzierung-mainz/"
+h1: "Baufinanzierung Mainz – Ihr unabhängiger Experte im Rhein-Main-Gebiet"
+localParagraph: "Mainz als Landeshauptstadt von Rheinland-Pfalz mit direkter Rhein-Lage und exzellenter Infrastruktur zieht immer mehr Kaufinteressenten an. Als unabhängiger Berater vergleiche ich für Sie über 400 Banken – damit Sie in Mainz zum besten Zinssatz finanzieren."
+marktInfo: "In Mainz bewegen sich die Kaufpreise für Eigentumswohnungen zwischen 4.000 und 6.000 €/m². Besonders gefragt sind Stadtteile wie Gonsenheim, Bretzenheim und die Altstadt. Ein Bankenvergleich kann hier über die Laufzeit Zehntausende Euro Unterschied machen."
+areaServed: ["Mainz", "Mainz-Kastel", "Mainz-Kostheim", "Wiesbaden"]
+faqItems:
+  - F: "Berät Dirk Heinrich auch Kunden in Mainz?" A: "Ja, Mainz liegt direkt im Einzugsgebiet. Beratungen finden persönlich oder per Video statt."
+  - F: "Was kostet eine Eigentumswohnung in Mainz aktuell?" A: "Mainz liegt preislich auf ähnlichem Niveau wie Wiesbaden – zwischen 4.000 und 6.000 €/m². Gerade hier lohnt sich ein umfassender Bankenvergleich besonders."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SCHRITT 4 — SPA Routing auf Render sicherstellen
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Prüfe render.yaml. Falls noch kein Rewrite-Eintrag vorhanden, füge hinzu:
+routes:
+  - type: rewrite
+    source: /*
+    destination: /index.html
+
+Prüfe auch vite.config.ts – falls dort ein base-Pfad konfiguriert ist, stelle sicher er ist "/"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ABSCHLUSS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Zeige mir:
+1. Alle erstellten/veränderten Dateien mit Pfad
+2. Die finalen Title Tags + Meta Descriptions aller 5 Seiten
+3. Bestätigung dass das SPA-Routing auf Render korrekt konfiguriert ist
+Ändere nichts am bestehenden Design oder Styling.

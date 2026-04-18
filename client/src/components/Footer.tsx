@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -16,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="py-12 lg:py-16 bg-muted/50 border-t border-border" data-testid="footer">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
           <div className="lg:col-span-2">
             <div className="mb-4">
               <span className="font-serif text-xl font-semibold text-foreground">
@@ -50,6 +51,28 @@ export default function Footer() {
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 <span>(06128) 923 9010</span>
               </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-medium text-sm mb-4 text-foreground">Baufinanzierung in Ihrer Region</h3>
+            <div className="space-y-2">
+              {[
+                { label: "Baufinanzierung Wiesbaden", href: "/baufinanzierung-wiesbaden/" },
+                { label: "Baufinanzierung Idstein", href: "/baufinanzierung-idstein/" },
+                { label: "Baufinanzierung Bad Schwalbach", href: "/baufinanzierung-bad-schwalbach/" },
+                { label: "Baufinanzierung Rheingau", href: "/baufinanzierung-rheingau/" },
+                { label: "Baufinanzierung Mainz", href: "/baufinanzierung-mainz/" },
+                { label: "Baufinanzierungsrechner", href: "/baufinanzierungsrechner/" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
 

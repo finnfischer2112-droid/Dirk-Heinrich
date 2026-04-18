@@ -1,0 +1,133 @@
+Du bist ein Senior SEO-Entwickler. Setze alle technischen SEO-Maßnahmen für heinrich-finanziert.com um.
+
+TECH-STACK (bereits analysiert):
+- Vite + React SPA
+- Static Site auf Render
+- Hauptdateien: client/index.html, client/public/, client/src/App.tsx, client/src/pages/LandingPage.tsx, client/src/components/ (HeroSection, ServicesSection, BenefitsSection, CTASection, Footer)
+- Kontaktdaten (Telefon, E-Mail) sind in Footer.tsx — lies sie von dort aus und verwende sie in den Schemas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 1 — client/index.html: Meta-Tags
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Title Tag ersetzen:
+ALT: 
+NEU: 
+
+Meta Description ersetzen/ergänzen:
+
+
+Diese Tags hinzufügen (falls noch nicht vorhanden):
+
+
+
+
+
+
+
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 2 — client/index.html: JSON-LD Schemas
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Lies Telefonnummer und E-Mail aus Footer.tsx aus. Füge dann direkt vor  diese zwei Script-Blöcke ein:
+
+BLOCK 1 — LocalBusiness:
+
+
+BLOCK 2 — FAQPage:
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 3 — client/public/robots.txt anlegen
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Erstelle client/public/robots.txt mit diesem Inhalt:
+User-agent: *
+Allow: /
+Sitemap: https://heinrich-finanziert.com/sitemap.xml
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 4 — client/public/sitemap.xml anlegen
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Erstelle client/public/sitemap.xml:
+
+
+  
+    https://heinrich-finanziert.com/
+    2025-04-18
+    monthly
+    1.0
+  
+  
+    https://heinrich-finanziert.com/baufinanzierung-wiesbaden/
+    2025-04-18
+    monthly
+    0.9
+  
+  
+    https://heinrich-finanziert.com/baufinanzierung-idstein/
+    2025-04-18
+    monthly
+    0.8
+  
+  
+    https://heinrich-finanziert.com/baufinanzierung-bad-schwalbach/
+    2025-04-18
+    monthly
+    0.8
+  
+  
+    https://heinrich-finanziert.com/baufinanzierung-rheingau/
+    2025-04-18
+    monthly
+    0.8
+  
+  
+    https://heinrich-finanziert.com/baufinanzierung-mainz/
+    2025-04-18
+    monthly
+    0.8
+  
+  
+    https://heinrich-finanziert.com/baufinanzierungsrechner/
+    2025-04-18
+    monthly
+    0.8
+  
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 5 — Google Fonts bereinigen
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Aktuell werden ~25 Google Fonts geladen. Nur 2 werden wirklich genutzt: Playfair Display und DM Sans.
+
+Suche alle Google Fonts Imports in client/index.html und in allen CSS/SCSS-Dateien unter client/src/.
+Ersetze alles durch einen einzigen optimierten Import:
+
+
+
+
+Entferne alle anderen @import oder  zu fonts.googleapis.com.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AUFGABE 6 — H1 in HeroSection.tsx anpassen
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Öffne client/src/components/HeroSection.tsx.
+Der aktuelle H1 lautet: "Ihre Baufinanzierung. Klar. Sicher. Maßgeschneidert."
+Ersetze ihn durch: "Baufinanzierung im Rhein-Main-Gebiet – Klar. Sicher. Maßgeschneidert."
+(Standort-Keyword vorne, Stil bleibt erhalten)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ABSCHLUSS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Zeige mir am Ende:
+1. Alle veränderten Dateien mit Pfad
+2. Den finalen -Bereich aus index.html (komplett)
+3. Bestätigung dass robots.txt und sitemap.xml korrekt angelegt wurden
+Ändere nichts anderes an Design, Styling oder Komponenten.
