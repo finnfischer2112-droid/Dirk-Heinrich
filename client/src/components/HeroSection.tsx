@@ -48,7 +48,7 @@ export default function HeroSection() {
               }`}
               data-testid="text-hero-headline"
             >
-              Baufinanzierung im Rhein-Main-Gebiet – <br />
+              Baufinanzierung Taunusstein – <br />
               <span className="text-primary">Klar. Sicher.</span> <br />
               Maßgeschneidert.
             </h1>
