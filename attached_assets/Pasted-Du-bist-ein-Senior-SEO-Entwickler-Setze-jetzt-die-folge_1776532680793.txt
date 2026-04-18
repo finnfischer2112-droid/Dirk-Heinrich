@@ -1,0 +1,50 @@
+Du bist ein Senior SEO-Entwickler. Setze jetzt die folgenden technischen SEO-Maßnahmen auf heinrich-finanziert.com um. Die Webseite ist für einen unabhängigen Baufinanzierungsberater in Taunusstein (Hessen).
+
+KONTEXT:
+- Inhaber: Dirk Heinrich
+- Domain: heinrich-finanziert.com
+- Zielmarkt: Baufinanzierung im Umkreis Taunusstein / Wiesbaden / Rhein-Main
+- Zielkunden: Privatkunden, die ein Haus kaufen oder bauen wollen
+- USP: Unabhängig, über 400 Banken im Vergleich, kostenlose Erstberatung
+
+AUFGABE 1 — META-TAGS OPTIMIEREN:
+Optimiere für die bestehende Homepage (index.html oder Hauptseite) den Title Tag und die Meta Description:
+- Title: "Baufinanzierung Taunusstein & Wiesbaden | Dirk Heinrich – Unabhängige Beratung"
+- Meta Description: "Unabhängige Baufinanzierung im Rhein-Main-Gebiet ✓ Über 400 Banken verglichen ✓ Kostenlos & unverbindlich beraten lassen ▶ Jetzt Termin vereinbaren"
+- Füge außerdem hinzu: 
+- Füge hinzu: 
+
+AUFGABE 2 — ROBOTS.TXT ANLEGEN/PRÜFEN:
+Erstelle oder überprüfe /robots.txt mit folgendem Inhalt:
+User-agent: *
+Allow: /
+Sitemap: https://heinrich-finanziert.com/sitemap.xml
+
+AUFGABE 3 — SITEMAP.XML ANLEGEN:
+Erstelle /sitemap.xml. Trage zunächst nur die aktuell existierenden Seiten ein. Format:
+
+
+  
+    https://heinrich-finanziert.com/
+    [heutiges Datum]
+    1.0
+  
+  [weitere existierende Seiten eintragen]
+
+
+AUFGABE 4 — SCHEMA MARKUP (JSON-LD) EINFÜGEN:
+Füge in den  der Homepage (und aller anderen Seiten falls möglich) dieses Schema Markup ein:
+
+
+AUFGABE 5 — OG-TAGS (SOCIAL MEDIA):
+Füge Open Graph Tags in den  ein:
+
+
+
+
+
+
+AUFGABE 6 — H1-TAG PRÜFEN:
+Stelle sicher dass auf der Homepage genau EIN H1-Tag existiert mit dem Text: "Baufinanzierung im Rhein-Main-Gebiet – Unabhängig & Kostenlos" (oder passe ihn sinnvoll an, wenn der bestehende H1 schon ähnlich ist — nicht zweimal setzen).
+
+Für jede Aufgabe: Zeige mir zuerst was du geändert hast (diff-Format oder vorher/nachher), dann setze es um. Fasse am Ende zusammen was gemacht wurde und was ich selbst noch in der Google Search Console einreichen soll.

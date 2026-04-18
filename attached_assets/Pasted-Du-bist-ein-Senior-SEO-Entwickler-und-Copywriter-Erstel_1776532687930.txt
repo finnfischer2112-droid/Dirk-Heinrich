@@ -1,0 +1,46 @@
+Du bist ein Senior SEO-Entwickler und Copywriter. Erstelle jetzt 5 lokale SEO-Landingpages für heinrich-finanziert.com. Jede Seite richtet sich an eine andere Stadt im Einzugsgebiet.
+
+KONTEXT:
+- Inhaber: Dirk Heinrich, unabhängiger Baufinanzierungsberater
+- Kanzleistandort: Taunusstein, Hessen
+- USP: Unabhängig (kein Bankberater), über 400 Banken verglichen, kostenlose Erstberatung, persönliche Beratung vor Ort oder online
+- Zulassung: §34i GewO (bitte erwähnen für Vertrauen)
+
+SEITEN DIE ERSTELLT WERDEN SOLLEN:
+1. /baufinanzierung-wiesbaden/ → Priorität #1 (größtes Suchvolumen)
+2. /baufinanzierung-idstein/
+3. /baufinanzierung-bad-schwalbach/
+4. /baufinanzierung-rheingau/ (deckt Eltville, Rüdesheim, Geisenheim ab)
+5. /baufinanzierung-mainz/
+
+FÜR JEDE SEITE GELTEN FOLGENDE ANFORDERUNGEN:
+
+DATEISTRUKTUR:
+- Nutze dasselbe Layout/Template wie die bestehende Homepage (Header, Footer, Navigation, Styling identisch übernehmen)
+- Neue Datei anlegen unter dem entsprechenden Pfad (z.B. baufinanzierung-wiesbaden/index.html oder als Route)
+
+SEO-ELEMENTE PRO SEITE:
+- Title Tag: "Baufinanzierung [Stadt] | Dirk Heinrich – Unabhängige Beratung"
+- Meta Description: "Unabhängige Baufinanzierung in [Stadt] ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung ▶ Jetzt Termin sichern" (max. 160 Zeichen)
+- Canonical Tag: 
+- JSON-LD Schema: LocalBusiness mit areaServed: [Stadtname] (gleiche Vorlage wie Homepage, nur areaServed anpassen)
+
+SEITENINHALT PRO SEITE (auf Deutsch, min. 800 Wörter):
+Abschnitt 1 — H1: "Baufinanzierung [Stadt] – Ihr unabhängiger Experte vor Ort"
+Abschnitt 2 — H2: "Warum einen unabhängigen Berater in [Stadt]?" (Vorteil gegenüber Bankberater erklären)
+Abschnitt 3 — H2: "Der Immobilienmarkt in [Stadt]" (2–3 Sätze lokale Besonderheiten, Preisniveau, Nachfrage — recherchiere kurz oder schätze realistisch für die Region)
+Abschnitt 4 — H2: "So läuft Ihre Baufinanzierungsberatung ab" (3 Schritte: Erstgespräch → Vergleich → Abschluss)
+Abschnitt 5 — H2: "Häufige Fragen zur Baufinanzierung in [Stadt]" (FAQ mit min. 4 Fragen + Antworten, als FAQPage-Schema)
+Abschnitt 6 — CTA-Block: "Kostenlose Beratung vereinbaren" (Button/Link zum Kontaktformular der Homepage)
+
+WICHTIGE REGELN:
+- KEIN Duplicate Content: Jede Seite muss einen einzigartigen lokalen Absatz haben (Immobilienmarkt-Abschnitt ist pro Stadt individuell)
+- Natürliche Keyword-Dichte: "Baufinanzierung [Stadt]" ca. 4–6x verwenden, nicht keyword-stuffing
+- Vertrauenssignale einbauen: §34i GewO erwähnen, "kostenlose Erstberatung", "unabhängig"
+- Interne Verlinkung: Jede Stadtseite verlinkt zurück zur Homepage UND auf 1–2 andere Stadtseiten
+
+SITEMAP AKTUALISIEREN:
+Nach Erstellung aller 5 Seiten: Trage alle neuen URLs in /sitemap.xml ein mit 0.8
+
+ABSCHLUSSBERICHT:
+Liste alle erstellten Dateien mit Pfaden auf. Zeige mir die finalen Title Tags und Meta Descriptions aller 5 Seiten zur Kontrolle.

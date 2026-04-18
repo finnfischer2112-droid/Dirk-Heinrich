@@ -1,0 +1,56 @@
+Du bist ein Senior SEO-Entwickler. Setze die folgenden abschließenden SEO-Maßnahmen für heinrich-finanziert.com um. Das sind die letzten Aufgaben für Phase 1.
+
+AUFGABE 1 — BAUFINANZIERUNGSRECHNER SEITE:
+Erstelle eine neue Seite unter /baufinanzierungsrechner/ mit folgendem Inhalt:
+
+Title: "Baufinanzierungsrechner | Monatliche Rate berechnen – Dirk Heinrich"
+Meta Description: "Berechnen Sie kostenlos Ihre monatliche Baufinanzierungsrate ✓ Zinsen, Tilgung & Laufzeit anpassen ✓ Unverbindlich & sofort online"
+H1: "Baufinanzierungsrechner – Ihre monatliche Rate berechnen"
+
+Baue einen funktionierenden JavaScript-Rechner mit folgenden Eingabefeldern:
+- Darlehensbetrag (€) — Slider + Zahleneingabe, von 50.000 bis 800.000 €
+- Sollzinssatz (%) — Slider von 1% bis 6%, Schritt 0.1%
+- Tilgungssatz (%) — Slider von 1% bis 5%, Schritt 0.1%
+- Zinsbindung (Jahre) — Auswahl: 5 / 10 / 15 / 20 / 25 Jahre
+
+Ausgabe (live aktualisiert):
+- Monatliche Rate in €
+- Gesamtzinskosten über die Laufzeit
+- Restschuld nach Zinsbindung
+
+Formel: Monatliche Rate = Darlehensbetrag × (Monatszins / (1 - (1 + Monatszins)^(-Monate)))
+(Monatszins = Sollzinssatz / 12 / 100)
+
+Design: Selbes Layout wie restliche Seite. Unterhalb des Rechners: CTA "Jetzt persönliche Beratung vereinbaren" mit Link zum Kontaktbereich.
+
+Füge FAQ-Schema für diese Seite ein (JSON-LD):
+- "Wie berechnet sich meine monatliche Baufinanzierungsrate?"
+- "Wie viel Eigenkapital brauche ich für eine Baufinanzierung?"
+- "Was ist der Unterschied zwischen Sollzins und Effektivzins?"
+
+AUFGABE 2 — INTERNE VERLINKUNG OPTIMIEREN:
+Füge auf der Homepage folgende interne Links hinzu (falls noch nicht vorhanden):
+- Link zu /baufinanzierungsrechner/ mit Ankertext "Baufinanzierung berechnen"
+- Links zu den 5 Stadtseiten aus Prompt 3 (erstelle einen sichtbaren "Regionen"-Bereich oder füge Links im Footer ein)
+Format für Regionen-Block: Überschrift "Wir beraten Sie in Ihrer Region", dann Linkliste mit allen Städten
+
+AUFGABE 3 — FAQ-SCHEMA AUF DER HOMEPAGE:
+Falls auf der Homepage bereits FAQs vorhanden sind oder ein FAQ-Bereich Sinn macht, füge folgendes JSON-LD Schema ein:
+
+
+AUFGABE 4 — BREADCRUMB-NAVIGATION:
+Füge auf allen Stadtseiten (nicht Homepage) eine Breadcrumb-Navigation ein:
+Startseite > Baufinanzierung [Stadt]
+Und das entsprechende BreadcrumbList Schema Markup (JSON-LD).
+
+AUFGABE 5 — ABSCHLUSSPRÜFUNG:
+Führe am Ende eine komplette Checkliste durch:
+☐ Alle Seiten haben einzigartigen Title Tag + Meta Description
+☐ Jede Seite hat genau einen H1
+☐ Sitemap ist vollständig und korrekt
+☐ Schema Markup auf allen Seiten vorhanden
+☐ Keine kaputten internen Links
+☐ robots.txt korrekt
+☐ Canonical Tags überall gesetzt
+
+Zeige mir das Ergebnis der Prüfung und liste alle Dateien auf die erstellt/verändert wurden.
