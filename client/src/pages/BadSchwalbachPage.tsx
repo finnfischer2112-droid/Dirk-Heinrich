@@ -21,6 +21,14 @@ export default function BadSchwalbachPage() {
           question: "Ist Bauen im Rheingau-Taunus günstiger als in Wiesbaden?",
           answer: "In der Regel ja. Grundstückspreise und Kaufpreise liegen im Kreisgebiet oft 20–30% unter dem Wiesbadener Niveau – bei ähnlicher Lebensqualität.",
         },
+        {
+          question: "Welche Zinsbindung empfiehlt sich aktuell für eine Baufinanzierung in Bad Schwalbach?",
+          answer: "In einem Umfeld mit eher höheren Zinsen empfehlen viele Experten eine längere Zinsbindung von 15–20 Jahren, um sich die Konditionen langfristig zu sichern. Was für Sie sinnvoll ist, besprechen wir im kostenlosen Erstgespräch.",
+        },
+        {
+          question: "Kann die Beratung auch online stattfinden?",
+          answer: "Ja, alle Beratungen sind auch bequem per Videokonferenz möglich – ohne Anfahrtsweg, direkt von zu Hause aus.",
+        },
       ]}
     />
   );

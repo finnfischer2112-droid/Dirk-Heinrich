@@ -1,17 +1,7 @@
-import { useState } from "react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
-  const [impressumOpen, setImpressumOpen] = useState(false);
   const currentYear = new Date().getFullYear();
 
   return (
@@ -79,92 +69,13 @@ export default function Footer() {
           <div>
             <h3 className="font-medium text-sm mb-4 text-foreground">Rechtliches</h3>
             <div className="space-y-3">
-              <Dialog open={impressumOpen} onOpenChange={setImpressumOpen}>
-                <DialogTrigger asChild>
-                  <button
-                    className="block text-sm text-muted-foreground transition-colors"
-                    data-testid="button-impressum"
-                  >
-                    Impressum
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                  <DialogHeader>
-                    <DialogTitle className="font-serif text-2xl">
-                      Impressum
-                    </DialogTitle>
-                  </DialogHeader>
-                  <div className="space-y-6 text-sm text-muted-foreground">
-                    <div>
-                      <p>Dirk Heinrich</p>
-                      <p>BWV-Versicherungsfachmann</p>
-                      <p>Zertifizierter Experte für den Öffentlichen Dienst</p>
-                      <p>DIN-Gewerbefachmann</p>
-                      <br />
-                      <p>Aarstraße 162</p>
-                      <p>65232 Taunusstein</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground mb-2">Kontakt</h4>
-                      <p>Telefon: (06128) 923 9010</p>
-                      <p>Mobil: 0172 616 5555</p>
-                      <p>E-Mail: dirk.heinrich@swisslife-select.de</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground mb-2">
-                        Berufsbezeichnung und berufsrechtliche Regelungen
-                      </h4>
-                      <p>
-                        Immobiliardarlehensvermittler gemäß § 34i Absatz 1 Satz 1 Gewerbeordnung (GewO)
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground mb-2">
-                        Zuständige Aufsichtsbehörde
-                      </h4>
-                      <p>
-                        Industrie- und Handelskammer Wiesbaden
-                      </p>
-                      <p>Wilhelmstraße 24–26</p>
-                      <p>65183 Wiesbaden</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground mb-2">
-                        Vermittlerregister
-                      </h4>
-                      <p>
-                        Industrie- und Handelskammer Wiesbaden
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground mb-2">
-                        Registrierungsnummer
-                      </h4>
-                      <p>
-                        D-W-1 79-6V5S-62
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground mb-2">
-                        Steuer-ID
-                      </h4>
-                      <p>
-                        DE 04 826 00947
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground mb-2">
-                        Streitschlichtung
-                      </h4>
-                      <p>
-                        Die Europäische Kommission stellt eine Plattform zur 
-                        Online-Streitbeilegung (OS) bereit: 
-                        https://ec.europa.eu/consumers/odr/
-                      </p>
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
+              <Link
+                href="/impressum/"
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="link-impressum"
+              >
+                Impressum
+              </Link>
             </div>
           </div>
         </div>

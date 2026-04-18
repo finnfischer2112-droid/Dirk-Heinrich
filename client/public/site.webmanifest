@@ -1,0 +1,16 @@
+{
+  "name": "Dirk Heinrich – Baufinanzierung",
+  "short_name": "Heinrich Finanziert",
+  "description": "Unabhängige Baufinanzierungsberatung in Taunusstein & Wiesbaden",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#D82033",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

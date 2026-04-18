@@ -12,6 +12,7 @@ import BadSchwalbachPage from "@/pages/BadSchwalbachPage";
 import RheingauPage from "@/pages/RheingauPage";
 import MainzPage from "@/pages/MainzPage";
 import RechnerPage from "@/pages/RechnerPage";
+import ImpressumPage from "@/pages/ImpressumPage";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -39,6 +40,8 @@ function Router() {
         <Route path="/baufinanzierung-mainz/" component={MainzPage} />
         <Route path="/baufinanzierungsrechner" component={RechnerPage} />
         <Route path="/baufinanzierungsrechner/" component={RechnerPage} />
+        <Route path="/impressum" component={ImpressumPage} />
+        <Route path="/impressum/" component={ImpressumPage} />
         <Route component={NotFound} />
       </Switch>
     </>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Star, TrendingUp, ShieldCheck } from "lucide-react";
 import { useLocation } from "wouter";
-import dirkHeinrichImg from "@assets/23002-Herr-Heinrich-Dirk-74085_1767387906796.png";
+const dirkHeinrichImg = "/dirk-heinrich.jpg";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);

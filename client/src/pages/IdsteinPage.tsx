@@ -21,6 +21,14 @@ export default function IdsteinPage() {
           question: "Gibt es in Idstein besondere Förderungen beim Hauskauf?",
           answer: "In Hessen gibt es das Wohnraumförderungsprogramm (WFP) sowie KfW-Bundesförderungen. Im Erstgespräch prüfen wir gemeinsam alle Möglichkeiten.",
         },
+        {
+          question: "Wie viel Eigenkapital brauche ich für eine Baufinanzierung in Idstein?",
+          answer: "Empfohlen werden mindestens 20% Eigenkapital – also ca. 10–15% für den Kaufpreis plus die Kaufnebenkosten (Notar, Grunderwerbsteuer). Bei Idsteiner Preisen von 450.000–750.000 € sind das schnell 100.000 € und mehr. Im Beratungsgespräch schauen wir gemeinsam, was in Ihrer Situation möglich ist.",
+        },
+        {
+          question: "Kann ich trotz laufenden Kredits eine neue Baufinanzierung in Idstein abschließen?",
+          answer: "In vielen Fällen ja. Als unabhängiger Berater prüfe ich alle Optionen – von der Umschuldung bis zur Aufstockung – und finde die beste Lösung für Ihre persönliche Situation.",
+        },
       ]}
     />
   );
