@@ -43,7 +43,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 h-16 lg:h-20">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => setLocation("/")}>
             <span className="font-serif text-xl lg:text-2xl font-semibold text-foreground">
               Dirk Heinrich
             </span>
