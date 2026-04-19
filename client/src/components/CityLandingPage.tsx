@@ -132,8 +132,21 @@ export default function CityLandingPage({
 
         {/* ── HERO ── */}
         <section className="relative bg-[#fafafa] overflow-hidden pt-24 pb-0">
-          {/* Subtle background glow */}
-          <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+          {/* City background image with light overlay */}
+          {cityImage && (
+            <>
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${cityImage})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/60" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/90" />
+            </>
+          )}
+          {/* Subtle background glow (only without city image) */}
+          {!cityImage && (
+            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+          )}
           <div className="absolute inset-0 opacity-[0.025]"
             style={{ backgroundImage: 'radial-gradient(#D82033 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
@@ -189,17 +202,6 @@ export default function CityLandingPage({
 
               {/* Right: Trust Panel + optional city image */}
               <div className="lg:col-span-5 flex flex-col gap-4">
-
-                {/* City photo if available */}
-                {cityImage && (
-                  <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50">
-                    <img
-                      src={cityImage}
-                      alt={`${city} – Baufinanzierung vor Ort`}
-                      className="w-full h-40 object-cover"
-                    />
-                  </div>
-                )}
 
                 {/* Trust Panel */}
                 <div className="bg-white border border-border rounded-2xl p-6 shadow-sm">
