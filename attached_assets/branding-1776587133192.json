@@ -1,0 +1,153 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "Inter",
+      "role": "body"
+    },
+    {
+      "family": "Roboto",
+      "role": "body"
+    },
+    {
+      "family": "Space Grotesk",
+      "role": "heading"
+    }
+  ],
+  "colors": {
+    "primary": "#007DB3",
+    "secondary": "#009DE0",
+    "accent": "#007DB3",
+    "background": "#0C0F13",
+    "textPrimary": "#0C0F13",
+    "link": "#111826"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Inter",
+      "heading": "Space Grotesk"
+    },
+    "fontStacks": {
+      "heading": [
+        "Space Grotesk",
+        "ui-sans-serif",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "sans-serif"
+      ],
+      "body": [
+        "Inter",
+        "ui-sans-serif",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Inter",
+        "ui-sans-serif",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "60px",
+      "h2": "36px",
+      "body": "14px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "4px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#007DB3",
+      "textColor": "#FFFFFF",
+      "borderRadius": "14px",
+      "borderRadiusCorners": {
+        "topLeft": "14px",
+        "topRight": "14px",
+        "bottomRight": "14px",
+        "bottomLeft": "14px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#0F161D",
+      "textColor": "#1ABAFF",
+      "borderRadius": "14px",
+      "borderRadiusCorners": {
+        "topLeft": "14px",
+        "topRight": "14px",
+        "bottomRight": "14px",
+        "bottomLeft": "14px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "https://www.almaron.de/assets/almaron-logo-optimized-IQtTckld.webp",
+    "favicon": "https://www.almaron.de/favicon.png",
+    "ogImage": "https://www.almaron.de/og-image.jpg",
+    "logoHref": "File saved at: attached_assets/logoHref.html",
+    "logoAlt": "ALMARON Performance Marketing"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is visible, located in the header, and links to the homepage. The alt text matches the brand name 'ALMARON', confirming it as the primary brand logo.",
+    "confidence": 0.9,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 1,
+      "text": "Erstgespräch buchen",
+      "reasoning": "Button #1 ('Erstgespräch buchen') uses the vibrant brand color #007DB3, making it stand out as the primary call-to-action. The text is action-oriented, encouraging users to book a consultation, which aligns with primary CTA goals."
+    },
+    "secondary": {
+      "index": 0,
+      "text": "Zur Kundenerfolgsgeschichte",
+      "reasoning": "Button #0 ('Zur Kundenerfolgsgeschichte') has a different background color (#0F161D) and serves as a secondary action, directing users to customer success stories. It complements the primary CTA without competing for attention."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "businesses seeking SEO services"
+  },
+  "designSystem": {
+    "framework": "tailwind",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is visible, located in the header, and links to the homepage. The alt text matches the brand name 'ALMARON', confirming it as the primary brand logo.",
+        "confidence": 0.9
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
