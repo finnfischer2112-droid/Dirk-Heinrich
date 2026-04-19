@@ -3,7 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 
-export default function Header() {
+interface HeaderProps {
+  transparent?: boolean;
+}
+
+export default function Header({ transparent = false }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [, setLocation] = useLocation();
@@ -32,22 +36,24 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  const isLight = transparent && !isScrolled;
+
   return (
     <header
       data-testid="header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 dark:bg-background/95 backdrop-blur-md shadow-sm"
+          ? "bg-white/95 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 h-16 lg:h-20">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => setLocation("/")}>
-            <span className="font-serif text-xl lg:text-2xl font-semibold text-foreground">
+            <span className={`font-serif text-xl lg:text-2xl font-semibold transition-colors duration-300 ${isLight ? "text-white" : "text-foreground"}`}>
               Dirk Heinrich
             </span>
-            <span className="hidden sm:inline text-muted-foreground text-sm">
+            <span className={`hidden sm:inline text-sm transition-colors duration-300 ${isLight ? "text-white/70" : "text-muted-foreground"}`}>
               | Baufinanzierung
             </span>
           </div>
@@ -55,14 +61,14 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("leistungen")}
-              className="text-sm font-medium text-muted-foreground transition-colors duration-200"
+              className={`text-sm font-medium transition-colors duration-300 ${isLight ? "text-white/85 hover:text-white" : "text-muted-foreground"}`}
               data-testid="link-services"
             >
               Leistungen
             </button>
             <button
               onClick={() => scrollToSection("vorteile")}
-              className="text-sm font-medium text-muted-foreground transition-colors duration-200"
+              className={`text-sm font-medium transition-colors duration-300 ${isLight ? "text-white/85 hover:text-white" : "text-muted-foreground"}`}
               data-testid="link-benefits"
             >
               Vorteile
@@ -78,7 +84,7 @@ export default function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className={`lg:hidden transition-colors duration-300 ${isLight ? "text-white hover:bg-white/10" : ""}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="button-mobile-menu"
           >

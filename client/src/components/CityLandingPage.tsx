@@ -128,7 +128,7 @@ export default function CityLandingPage({
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        <Header />
+        <Header transparent={!!cityImage} />
 
         {/* ── HERO ── */}
         <section className="relative bg-[#fafafa] overflow-hidden pt-24 pb-0">
