@@ -5,6 +5,7 @@ export default function MainzPage() {
     <CityLandingPage
       city="Mainz"
       slug="baufinanzierung-mainz"
+      cityImage="/mainz-skyline.jpg"
       titleTag="Baufinanzierung Mainz | Dirk Heinrich – Unabhängige Beratung"
       metaDescription="Unabhängige Baufinanzierung in Mainz ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung ▶ Jetzt Termin sichern"
       canonicalUrl="https://heinrich-finanziert.com/baufinanzierung-mainz/"
