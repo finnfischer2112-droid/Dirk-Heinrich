@@ -134,14 +134,10 @@ export default function CityLandingPage({
         <section className="relative bg-[#fafafa] overflow-hidden pt-24 pb-0">
           {/* City background image with light overlay */}
           {cityImage && (
-            <>
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${cityImage})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/60" />
-              <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/90" />
-            </>
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${cityImage})` }}
+            />
           )}
           {/* Subtle background glow (only without city image) */}
           {!cityImage && (
@@ -161,7 +157,7 @@ export default function CityLandingPage({
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
               {/* Left: Copy */}
-              <div className="lg:col-span-7">
+              <div className={`lg:col-span-7 ${cityImage ? "backdrop-blur-sm bg-white/70 rounded-2xl p-6 lg:p-8" : ""}`}>
                 {/* Location badge */}
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-5">
                   <MapPin className="w-3 h-3" />
