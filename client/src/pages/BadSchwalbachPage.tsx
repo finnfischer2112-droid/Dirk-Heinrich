@@ -5,6 +5,7 @@ export default function BadSchwalbachPage() {
     <CityLandingPage
       city="Bad Schwalbach"
       slug="baufinanzierung-bad-schwalbach"
+      cityImage="/badschwalbach-skyline.jpg"
       titleTag="Baufinanzierung Bad Schwalbach | Dirk Heinrich – Unabhängige Beratung"
       metaDescription="Unabhängige Baufinanzierung in Bad Schwalbach ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung ▶ Jetzt Termin sichern"
       canonicalUrl="https://heinrich-finanziert.com/baufinanzierung-bad-schwalbach/"
