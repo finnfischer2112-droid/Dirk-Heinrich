@@ -37,10 +37,7 @@ function FaqAccordion({ items }: { items: FaqItem[] }) {
   return (
     <div className="space-y-3">
       {items.map((faq, i) => (
-        <div
-          key={i}
-          className="border border-border rounded-xl overflow-hidden"
-        >
+        <div key={i} className="border border-border rounded-xl overflow-hidden">
           <button
             className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-muted/30 transition-colors"
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
@@ -134,98 +131,108 @@ export default function CityLandingPage({
         <Header />
 
         {/* ── HERO ── */}
-        <section className="relative bg-[#0f1923] overflow-hidden pt-24 pb-0">
-          {/* City background image */}
-          {cityImage && (
-            <>
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${cityImage})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0f1923]/95 via-[#0f1923]/80 to-[#0f1923]/60" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f1923] via-transparent to-[#0f1923]/40" />
-            </>
-          )}
-          {/* Background texture */}
-          <div className="absolute inset-0 opacity-[0.04]"
-            style={{ backgroundImage: 'radial-gradient(#D82033 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <section className="relative bg-[#fafafa] overflow-hidden pt-24 pb-0">
+          {/* Subtle background glow */}
+          <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+          <div className="absolute inset-0 opacity-[0.025]"
+            style={{ backgroundImage: 'radial-gradient(#D82033 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
-          <div className="relative max-w-6xl mx-auto px-6 lg:px-8 py-14 lg:py-20">
+          <div className="relative max-w-6xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-xs text-white/40 mb-6" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-white/70 transition-colors">Startseite</Link>
+            <nav className="flex items-center gap-2 text-xs text-muted-foreground mb-6" aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-foreground transition-colors">Startseite</Link>
               <ChevronRight className="w-3 h-3" />
-              <span className="text-white/60">Baufinanzierung {city}</span>
+              <span className="text-foreground/70">Baufinanzierung {city}</span>
             </nav>
 
-            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
               {/* Left: Copy */}
               <div className="lg:col-span-7">
                 {/* Location badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-white/80 text-xs font-semibold uppercase tracking-widest mb-6">
-                  <MapPin className="w-3 h-3 text-primary" />
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-5">
+                  <MapPin className="w-3 h-3" />
                   {city} & Rhein-Main-Gebiet
                 </div>
 
-                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.15] text-white mb-5">
+                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-5">
                   {h1}
                 </h1>
 
-                <p className="text-white/60 text-base lg:text-lg leading-relaxed mb-8 max-w-lg">
+                <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-8 max-w-lg">
                   {localParagraph}
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-8">
                   <Button
                     size="lg"
                     onClick={() => window.open(CTA_URL, "_blank")}
-                    className="bg-primary hover:bg-primary/90 text-white text-sm px-7 h-12 rounded-full shadow-lg shadow-primary/30 transition-all"
+                    className="text-sm px-7 h-12 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
                     data-testid="button-city-cta-hero"
                   >
                     Kostenlose Erstberatung
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
-                  <p className="self-center text-xs text-white/40 hidden sm:block">
-                    Unverbindlich · 400+ Banken verglichen
-                  </p>
+                  <span className="text-xs text-muted-foreground">Unverbindlich · 400+ Banken verglichen</span>
+                </div>
+
+                {/* Quick trust badges */}
+                <div className="flex flex-wrap gap-3">
+                  {["Über 400 Banken", "§34i GewO", "Kostenlos", "Unabhängig"].map((b) => (
+                    <div key={b} className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+                      {b}
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Right: Trust Panel */}
-              <div className="lg:col-span-5">
-                <div className="bg-white/[0.06] border border-white/10 rounded-2xl p-6 backdrop-blur-sm">
-                  <p className="text-xs uppercase tracking-widest text-white/40 font-semibold mb-1">Vertrauen Sie auf Erfahrung</p>
-                  <p className="text-white font-medium text-sm mb-5">Nachweisbare Qualität in {city}</p>
+              {/* Right: Trust Panel + optional city image */}
+              <div className="lg:col-span-5 flex flex-col gap-4">
+
+                {/* City photo if available */}
+                {cityImage && (
+                  <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50">
+                    <img
+                      src={cityImage}
+                      alt={`${city} – Baufinanzierung vor Ort`}
+                      className="w-full h-40 object-cover"
+                    />
+                  </div>
+                )}
+
+                {/* Trust Panel */}
+                <div className="bg-white border border-border rounded-2xl p-6 shadow-sm">
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground font-semibold mb-1">Vertrauen Sie auf Erfahrung</p>
+                  <p className="text-foreground font-medium text-sm mb-5">Nachweisbare Qualität in {city}</p>
 
                   <div className="space-y-4">
                     {[
-                      { icon: Banknote, value: "400+", label: "Banken im Vergleich", color: "bg-primary/20 text-primary" },
-                      { icon: Star, value: "5.0 / 5", label: "Google Bewertungen", color: "bg-amber-500/20 text-amber-400" },
-                      { icon: Shield, value: "§34i GewO", label: "Offiziell zugelassen", color: "bg-emerald-500/20 text-emerald-400" },
-                      { icon: Award, value: "100% Kostenlos", label: "Keine Beratungsgebühr", color: "bg-blue-500/20 text-blue-400" },
+                      { icon: Banknote, value: "400+", label: "Banken im Vergleich", color: "bg-primary/10 text-primary" },
+                      { icon: Star, value: "5.0 / 5", label: "Google Bewertungen", color: "bg-amber-50 text-amber-500" },
+                      { icon: Shield, value: "§34i GewO", label: "Offiziell zugelassen", color: "bg-emerald-50 text-emerald-600" },
+                      { icon: Award, value: "100% Kostenlos", label: "Keine Beratungsgebühr", color: "bg-blue-50 text-blue-600" },
                     ].map((stat) => (
-                      <div key={stat.label} className="flex items-center gap-4">
-                        <div className={`w-10 h-10 rounded-xl ${stat.color} flex items-center justify-center flex-shrink-0`}>
-                          <stat.icon className="w-5 h-5" />
+                      <div key={stat.label} className="flex items-center gap-3">
+                        <div className={`w-9 h-9 rounded-xl ${stat.color} flex items-center justify-center flex-shrink-0`}>
+                          <stat.icon className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="text-white font-semibold text-sm leading-none mb-0.5">{stat.value}</div>
-                          <div className="text-white/45 text-xs">{stat.label}</div>
+                          <div className="text-foreground font-semibold text-sm leading-none mb-0.5">{stat.value}</div>
+                          <div className="text-muted-foreground text-xs">{stat.label}</div>
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  {/* Google rating row */}
-                  <div className="mt-5 pt-5 border-t border-white/10 flex items-center gap-3">
+                  {/* Stars */}
+                  <div className="mt-5 pt-4 border-t border-border flex items-center gap-2">
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                       ))}
                     </div>
-                    <span className="text-xs text-white/50">Verifizierte Kundenmeinungen</span>
+                    <span className="text-xs text-muted-foreground">Verifizierte Kundenmeinungen</span>
                   </div>
                 </div>
               </div>
@@ -233,30 +240,30 @@ export default function CityLandingPage({
             </div>
           </div>
 
-          {/* Bottom fade into white */}
-          <div className="h-12 bg-gradient-to-b from-transparent to-background" />
+          {/* Bottom border */}
+          <div className="border-b border-border/50" />
         </section>
 
         <main className="pb-20">
           <div className="max-w-5xl mx-auto px-6 lg:px-8">
 
             {/* ── STATS BAR ── */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 mb-14">
               {[
                 { value: "400+", label: "Banken verglichen" },
                 { value: "5.0★", label: "Google Bewertung" },
-                { value: "kostenlos", label: "Erstberatung" },
-                { value: "vor Ort", label: `Beratung in ${city}` },
+                { value: "Kostenlos", label: "Erstberatung" },
+                { value: "Vor Ort", label: `Beratung in ${city}` },
               ].map((s) => (
                 <div key={s.label} className="bg-muted/40 rounded-2xl p-5 text-center border border-border/50">
-                  <div className="font-serif text-2xl font-semibold text-foreground mb-1">{s.value}</div>
+                  <div className="font-serif text-xl lg:text-2xl font-semibold text-foreground mb-1">{s.value}</div>
                   <div className="text-xs text-muted-foreground">{s.label}</div>
                 </div>
               ))}
             </div>
 
             {/* ── WARUM UNABHÄNGIG ── */}
-            <section className="mb-16">
+            <section className="mb-14">
               <h2 className="font-serif text-2xl lg:text-3xl font-medium mb-3">
                 Warum unabhängige Baufinanzierung in {city}?
               </h2>
@@ -294,29 +301,26 @@ export default function CityLandingPage({
             </section>
 
             {/* ── MARKT ── */}
-            <section className="mb-16">
-              <div className="bg-[#0f1923] rounded-2xl p-8 lg:p-10 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-                <div className="relative">
-                  <p className="text-xs uppercase tracking-widest text-white/40 font-semibold mb-2">Lokale Expertise</p>
-                  <h2 className="font-serif text-2xl lg:text-3xl font-medium text-white mb-4">
-                    Der Immobilienmarkt in {city}
-                  </h2>
-                  <p className="text-white/65 leading-relaxed max-w-2xl">{marktInfo}</p>
+            <section className="mb-14">
+              <div className="bg-muted/40 rounded-2xl p-8 lg:p-10 border border-border/60">
+                <p className="text-xs uppercase tracking-widest text-muted-foreground font-semibold mb-2">Lokale Expertise</p>
+                <h2 className="font-serif text-2xl lg:text-3xl font-medium mb-4">
+                  Der Immobilienmarkt in {city}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed max-w-2xl">{marktInfo}</p>
 
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    {areaServed.map((area) => (
-                      <span key={area} className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 rounded-full text-xs text-white/70 border border-white/10">
-                        <MapPin className="w-3 h-3" /> {area}
-                      </span>
-                    ))}
-                  </div>
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {areaServed.map((area) => (
+                    <span key={area} className="inline-flex items-center gap-1.5 px-3 py-1 bg-background rounded-full text-xs text-muted-foreground border border-border">
+                      <MapPin className="w-3 h-3 text-primary" /> {area}
+                    </span>
+                  ))}
                 </div>
               </div>
             </section>
 
             {/* ── ABLAUF ── */}
-            <section className="mb-16">
+            <section className="mb-14">
               <h2 className="font-serif text-2xl lg:text-3xl font-medium mb-2">
                 So läuft Ihre Baufinanzierung in {city} ab
               </h2>
@@ -343,7 +347,7 @@ export default function CityLandingPage({
             </section>
 
             {/* ── TRUST ROW ── */}
-            <section className="mb-16 bg-muted/30 rounded-2xl p-8 border border-border/50">
+            <section className="mb-14 bg-muted/30 rounded-2xl p-8 border border-border/50">
               <div className="grid sm:grid-cols-3 gap-6 text-center">
                 {[
                   { icon: Star, label: "5,0 Sterne", sub: "Google Bewertungen" },
@@ -362,7 +366,7 @@ export default function CityLandingPage({
             </section>
 
             {/* ── FAQ ── */}
-            <section className="mb-16">
+            <section className="mb-14">
               <h2 className="font-serif text-2xl lg:text-3xl font-medium mb-2">
                 Häufige Fragen zur Baufinanzierung in {city}
               </h2>
@@ -371,24 +375,23 @@ export default function CityLandingPage({
             </section>
 
             {/* ── FINAL CTA ── */}
-            <section className="bg-[#0f1923] rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
-              <div className="absolute inset-0 opacity-[0.04]"
-                style={{ backgroundImage: 'radial-gradient(#D82033 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-primary/15 rounded-full blur-3xl pointer-events-none" />
-
+            <section className="bg-primary rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden">
+              <div className="absolute inset-0 opacity-[0.07]"
+                style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
               <div className="relative">
-                <p className="text-xs uppercase tracking-widest text-white/40 font-semibold mb-3">Baufinanzierung {city}</p>
-                <h2 className="font-serif text-2xl lg:text-4xl font-medium text-white mb-4">
+                <p className="text-xs uppercase tracking-widest text-primary-foreground/60 font-semibold mb-3">Baufinanzierung {city}</p>
+                <h2 className="font-serif text-2xl lg:text-4xl font-medium text-primary-foreground mb-4">
                   Jetzt kostenlose Beratung vereinbaren
                 </h2>
-                <p className="text-white/55 mb-8 max-w-lg mx-auto leading-relaxed">
+                <p className="text-primary-foreground/75 mb-8 max-w-lg mx-auto leading-relaxed">
                   Dirk Heinrich vergleicht für Sie über 400 Banken und findet das beste Angebot für Ihre persönliche Situation – persönlich in {city} oder bequem per Video.
                 </p>
 
                 <Button
                   size="lg"
+                  variant="secondary"
                   onClick={() => window.open(CTA_URL, "_blank")}
-                  className="bg-primary hover:bg-primary/90 text-white text-sm px-8 h-12 rounded-full shadow-lg shadow-primary/30 transition-all mb-4"
+                  className="bg-white text-primary hover:bg-white/90 text-sm px-8 h-12 rounded-full shadow-lg transition-all mb-4"
                   data-testid="button-city-cta-final"
                 >
                   Finanzierung prüfen
@@ -397,8 +400,8 @@ export default function CityLandingPage({
 
                 <div className="flex flex-wrap justify-center gap-4 mt-2">
                   {["§34i GewO zugelassen", "Kostenlose Erstberatung", "Unabhängig"].map((b) => (
-                    <div key={b} className="flex items-center gap-1.5 text-xs text-white/40">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-primary/70" />
+                    <div key={b} className="flex items-center gap-1.5 text-xs text-primary-foreground/50">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-primary-foreground/70" />
                       {b}
                     </div>
                   ))}
