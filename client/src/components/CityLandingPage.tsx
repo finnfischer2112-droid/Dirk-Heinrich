@@ -26,6 +26,7 @@ interface CityLandingPageProps {
   faqItems: FaqItem[];
   areaServed: string[];
   slug: string;
+  cityImage?: string;
 }
 
 const CTA_URL =
@@ -72,6 +73,7 @@ export default function CityLandingPage({
   faqItems,
   areaServed,
   slug,
+  cityImage,
 }: CityLandingPageProps) {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -133,6 +135,17 @@ export default function CityLandingPage({
 
         {/* ── HERO ── */}
         <section className="relative bg-[#0f1923] overflow-hidden pt-24 pb-0">
+          {/* City background image */}
+          {cityImage && (
+            <>
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${cityImage})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0f1923]/95 via-[#0f1923]/80 to-[#0f1923]/60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f1923] via-transparent to-[#0f1923]/40" />
+            </>
+          )}
           {/* Background texture */}
           <div className="absolute inset-0 opacity-[0.04]"
             style={{ backgroundImage: 'radial-gradient(#D82033 1px, transparent 1px)', backgroundSize: '32px 32px' }} />

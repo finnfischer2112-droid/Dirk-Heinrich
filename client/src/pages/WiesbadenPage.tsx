@@ -5,6 +5,7 @@ export default function WiesbadenPage() {
     <CityLandingPage
       city="Wiesbaden"
       slug="baufinanzierung-wiesbaden"
+      cityImage="/wiesbaden-skyline.jpg"
       titleTag="Baufinanzierung Wiesbaden | Dirk Heinrich – Unabhängige Beratung"
       metaDescription="Unabhängige Baufinanzierung in Wiesbaden ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung ▶ Jetzt Termin sichern"
       canonicalUrl="https://heinrich-finanziert.com/baufinanzierung-wiesbaden/"
