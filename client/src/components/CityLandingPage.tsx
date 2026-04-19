@@ -34,17 +34,25 @@ const CTA_URL =
 
 function ProcessSteps({ city }: { city: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+    const update = () => {
+      const el = ref.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // Line starts filling when element top enters bottom of viewport
+      // Line reaches 100% when element top reaches 40% from top of viewport
+      const start = vh;
+      const end = vh * 0.4;
+      const p = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
+      setProgress(p);
+    };
+
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+    return () => window.removeEventListener("scroll", update);
   }, []);
 
   const steps = [
@@ -61,15 +69,12 @@ function ProcessSteps({ city }: { city: string }) {
       <p className="text-muted-foreground mb-8 text-sm">Strukturierter Prozess – vom Erstgespräch bis zur Auszahlung</p>
 
       <div ref={ref} className="relative">
-        {/* Track line (always visible, faint) */}
+        {/* Track line */}
         <div className="hidden md:block absolute top-[1.75rem] left-0 right-0 h-px bg-border/60" />
-        {/* Animated fill line */}
+        {/* Scroll-driven fill line */}
         <div
-          className="hidden md:block absolute top-[1.75rem] left-0 h-px bg-primary origin-left"
-          style={{
-            width: visible ? "100%" : "0%",
-            transition: visible ? "width 1.2s cubic-bezier(0.4, 0, 0.2, 1)" : "none",
-          }}
+          className="hidden md:block absolute top-[1.75rem] left-0 h-px bg-primary"
+          style={{ width: `${progress * 100}%` }}
         />
 
         <div className="grid md:grid-cols-3 gap-6">
