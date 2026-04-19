@@ -5,6 +5,7 @@ export default function IdsteinPage() {
     <CityLandingPage
       city="Idstein"
       slug="baufinanzierung-idstein"
+      cityImage="/idstein-skyline.jpg"
       titleTag="Baufinanzierung Idstein | Dirk Heinrich – Unabhängige Beratung"
       metaDescription="Unabhängige Baufinanzierung in Idstein ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung ▶ Jetzt Termin sichern"
       canonicalUrl="https://heinrich-finanziert.com/baufinanzierung-idstein/"
