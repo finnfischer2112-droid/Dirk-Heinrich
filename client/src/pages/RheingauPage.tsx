@@ -5,6 +5,7 @@ export default function RheingauPage() {
     <CityLandingPage
       city="Rheingau"
       slug="baufinanzierung-rheingau"
+      cityImage="/rheingau-skyline.jpg"
       titleTag="Baufinanzierung Rheingau | Dirk Heinrich – Unabhängige Beratung"
       metaDescription="Unabhängige Baufinanzierung im Rheingau ✓ Eltville, Rüdesheim, Geisenheim ✓ Über 400 Banken verglichen ✓ Kostenlose Erstberatung"
       canonicalUrl="https://heinrich-finanziert.com/baufinanzierung-rheingau/"
