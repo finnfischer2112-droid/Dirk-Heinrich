@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Star, TrendingUp, ShieldCheck } from "lucide-react";
 import { useLocation } from "wouter";
-const dirkHeinrichImg = "/dirk-heinrich.jpg";
+const dirkHeinrichImg = "/dirk-heinrich-nobg.png";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -138,12 +138,10 @@ export default function HeroSection() {
 
               {/* Main Image Container */}
               <div className="relative">
-                <div className="absolute inset-0 bg-primary/10 rounded-[40px] rotate-3 translate-x-4 translate-y-4 -z-10" />
-                <div className="absolute inset-0 bg-muted rounded-[40px] -z-10" />
                 <img
                   src={dirkHeinrichImg}
-                  alt="Dirk Heinrich"
-                  className="relative z-10 w-full h-auto object-contain rounded-[40px] transform hover:scale-[1.02] transition-transform duration-500"
+                  alt="Dirk Heinrich – Baufinanzierungsberater Taunusstein"
+                  className="relative z-10 w-full h-auto object-contain drop-shadow-2xl transform hover:scale-[1.02] transition-transform duration-500"
                   data-testid="img-dirk-heinrich"
                 />
               </div>
