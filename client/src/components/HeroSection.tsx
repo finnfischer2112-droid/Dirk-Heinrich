@@ -28,13 +28,13 @@ export default function HeroSection() {
              style={{ backgroundImage: 'radial-gradient(#D82033 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-16">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           
           {/* Left Content Column */}
           <div className="lg:col-span-7 text-center lg:text-left order-1">
             <div
-              className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6 transition-all duration-700 delay-100 ${
+              className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4 transition-all duration-700 delay-100 ${
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
@@ -43,7 +43,7 @@ export default function HeroSection() {
             </div>
 
             <h1
-              className={`font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.1] mb-8 transition-all duration-700 delay-300 ${
+              className={`font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium leading-[1.1] mb-5 transition-all duration-700 delay-300 ${
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
               data-testid="text-hero-headline"
@@ -54,7 +54,7 @@ export default function HeroSection() {
             </h1>
 
             <p
-              className={`text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed transition-all duration-700 delay-500 ${
+              className={`text-base lg:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 leading-relaxed transition-all duration-700 delay-500 ${
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               data-testid="text-hero-subheadline"
@@ -64,7 +64,7 @@ export default function HeroSection() {
             </p>
 
             {/* Feature Tags */}
-            <div className={`flex flex-wrap justify-center lg:justify-start gap-4 mb-10 transition-all duration-700 delay-600 ${
+            <div className={`flex flex-wrap justify-center lg:justify-start gap-4 mb-6 transition-all duration-700 delay-600 ${
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
               {[
@@ -79,24 +79,24 @@ export default function HeroSection() {
             </div>
 
             <div
-              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-700 delay-700 ${
+              className={`flex flex-col sm:flex-row gap-3 justify-center lg:justify-start transition-all duration-700 delay-700 ${
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
               <Button
                 size="lg"
                 onClick={() => window.open("https://swisslife-select.finlink.de/lutz-starke/start/finance_type?partner=2a78b047-f5f5-47aa-b7ff-f09906c94fa3&partnerCompany=Swiss%20Life%20Select", "_blank")}
-                className="text-base px-10 h-14 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all active-elevate-2"
+                className="text-sm px-8 h-12 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all active-elevate-2"
                 data-testid="button-hero-cta"
               >
                 Finanzierung prüfen
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
               <Button
                 variant="outline"
                 size="lg"
                 onClick={() => document.getElementById("leistungen")?.scrollIntoView({ behavior: "smooth" })}
-                className="text-base h-14 px-10 rounded-full border-2 hover-elevate active-elevate-2"
+                className="text-sm h-12 px-8 rounded-full border-2 hover-elevate active-elevate-2"
                 data-testid="button-hero-secondary"
               >
                 Leistungen ansehen
