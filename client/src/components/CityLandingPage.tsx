@@ -134,10 +134,13 @@ export default function CityLandingPage({
         <section className="relative bg-[#fafafa] overflow-hidden pt-24 pb-0">
           {/* City background image with light overlay */}
           {cityImage && (
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${cityImage})` }}
-            />
+            <>
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${cityImage})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/40" />
+            </>
           )}
           {/* Subtle background glow (only without city image) */}
           {!cityImage && (
@@ -157,18 +160,18 @@ export default function CityLandingPage({
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
               {/* Left: Copy */}
-              <div className={`lg:col-span-7 ${cityImage ? "backdrop-blur-sm bg-white/70 rounded-2xl p-6 lg:p-8" : ""}`}>
+              <div className="lg:col-span-7">
                 {/* Location badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-5">
+                <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-5 ${cityImage ? "bg-white/20 backdrop-blur-sm text-white border border-white/30" : "bg-primary/10 text-primary"}`}>
                   <MapPin className="w-3 h-3" />
                   {city} & Rhein-Main-Gebiet
                 </div>
 
-                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.15] text-foreground mb-5">
+                <h1 className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.15] mb-5 ${cityImage ? "text-white drop-shadow-md" : "text-foreground"}`}>
                   {h1}
                 </h1>
 
-                <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-8 max-w-lg">
+                <p className={`text-base lg:text-lg leading-relaxed mb-8 max-w-lg ${cityImage ? "text-white/85 drop-shadow-sm" : "text-muted-foreground"}`}>
                   {localParagraph}
                 </p>
 
@@ -182,14 +185,14 @@ export default function CityLandingPage({
                     Kostenlose Erstberatung
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
-                  <span className="text-xs text-muted-foreground">Unverbindlich · 400+ Banken verglichen</span>
+                  <span className={`text-xs ${cityImage ? "text-white/70" : "text-muted-foreground"}`}>Unverbindlich · 400+ Banken verglichen</span>
                 </div>
 
                 {/* Quick trust badges */}
                 <div className="flex flex-wrap gap-3">
                   {["Über 400 Banken", "§34i GewO", "Kostenlos", "Unabhängig"].map((b) => (
-                    <div key={b} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+                    <div key={b} className={`flex items-center gap-1.5 text-xs ${cityImage ? "text-white/75" : "text-muted-foreground"}`}>
+                      <CheckCircle2 className={`w-3.5 h-3.5 ${cityImage ? "text-white/90" : "text-primary"}`} />
                       {b}
                     </div>
                   ))}
