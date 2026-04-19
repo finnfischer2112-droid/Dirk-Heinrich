@@ -139,7 +139,8 @@ export default function CityLandingPage({
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${cityImage})` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/40" />
+              <div className="absolute inset-0 bg-black/45" />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/10" />
             </>
           )}
           {/* Subtle background glow (only without city image) */}
