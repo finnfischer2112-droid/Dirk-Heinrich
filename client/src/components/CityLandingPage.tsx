@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import {
@@ -31,6 +31,60 @@ interface CityLandingPageProps {
 
 const CTA_URL =
   "https://swisslife-select.finlink.de/lutz-starke/start/finance_type?partner=2a78b047-f5f5-47aa-b7ff-f09906c94fa3&partnerCompany=Swiss%20Life%20Select";
+
+function ProcessSteps({ city }: { city: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const steps = [
+    { step: "01", title: "Kostenloses Erstgespräch", text: "Wir analysieren Ihre Situation, Wünsche und finanziellen Möglichkeiten – persönlich oder per Video." },
+    { step: "02", title: "Bankenvergleich", text: "Ich vergleiche die Konditionen von über 400 Anbietern und selektiere die Top-Angebote für Ihre Situation." },
+    { step: "03", title: "Optimales Angebot & Abschluss", text: "Sie entscheiden. Ich begleite Sie bis zur vollständigen Auszahlung – transparent, klar und ohne Druck." },
+  ];
+
+  return (
+    <section className="mb-14">
+      <h2 className="font-serif text-2xl lg:text-3xl font-medium mb-2">
+        So läuft Ihre Baufinanzierung in {city} ab
+      </h2>
+      <p className="text-muted-foreground mb-8 text-sm">Strukturierter Prozess – vom Erstgespräch bis zur Auszahlung</p>
+
+      <div ref={ref} className="relative">
+        {/* Track line (always visible, faint) */}
+        <div className="hidden md:block absolute top-[1.75rem] left-0 right-0 h-px bg-border/60" />
+        {/* Animated fill line */}
+        <div
+          className="hidden md:block absolute top-[1.75rem] left-0 h-px bg-primary origin-left"
+          style={{
+            width: visible ? "100%" : "0%",
+            transition: visible ? "width 1.2s cubic-bezier(0.4, 0, 0.2, 1)" : "none",
+          }}
+        />
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {steps.map((s) => (
+            <div key={s.step} className="relative z-10">
+              <div className="text-4xl font-serif font-medium text-primary/20 leading-none mb-4">{s.step}</div>
+              <h3 className="font-semibold mb-2">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function FaqAccordion({ items }: { items: FaqItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -322,31 +376,7 @@ export default function CityLandingPage({
             </section>
 
             {/* ── ABLAUF ── */}
-            <section className="mb-14">
-              <h2 className="font-serif text-2xl lg:text-3xl font-medium mb-2">
-                So läuft Ihre Baufinanzierung in {city} ab
-              </h2>
-              <p className="text-muted-foreground mb-8 text-sm">Strukturierter Prozess – vom Erstgespräch bis zur Auszahlung</p>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { step: "01", title: "Kostenloses Erstgespräch", text: "Wir analysieren Ihre Situation, Wünsche und finanziellen Möglichkeiten – persönlich oder per Video." },
-                  { step: "02", title: "Bankenvergleich", text: "Ich vergleiche die Konditionen von über 400 Anbietern und selektiere die Top-Angebote für Ihre Situation." },
-                  { step: "03", title: "Optimales Angebot & Abschluss", text: "Sie entscheiden. Ich begleite Sie bis zur vollständigen Auszahlung – transparent, klar und ohne Druck." },
-                ].map((s, i) => (
-                  <div key={s.step} className="relative">
-                    {i < 2 && (
-                      <div className="hidden md:block absolute top-7 left-full w-full h-px bg-border z-0 -translate-x-8" />
-                    )}
-                    <div className="relative z-10">
-                      <div className="text-4xl font-serif font-medium text-primary/20 leading-none mb-4">{s.step}</div>
-                      <h3 className="font-semibold mb-2">{s.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{s.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+            <ProcessSteps city={city} />
 
             {/* ── TRUST ROW ── */}
             <section className="mb-14 bg-muted/30 rounded-2xl p-8 border border-border/50">
